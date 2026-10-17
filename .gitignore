@@ -1,0 +1,13 @@
+.DS_Store
+idist/
+build/
+out/
+target/
+.env
+._*
+*.key
+*.pem
+*~
+*.o
+*.so
+*.a
