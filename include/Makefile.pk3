@@ -1,0 +1,63 @@
+.KEEP_STATE:
+.SUFFIXES: .C .h
+
+PKBASE = /cs/src/pk3
+PKBIN  = $(PKBASE)/bin
+PKLIB  = $(PKBASE)/lib
+PKINC  = $(PKBASE)/include
+PKSRC  = $(PKBASE)/src
+PKBAK  = $(PKBASE)/src/backups
+PKINSTALLBIN = $(PKBIN)/bin_install
+PKINSTALLLIB = $(PKLIB)/lib_install
+
+PKCC     = /opt/SUNWspro/bin/CC
+PKCFLAGS = -g -DDEBUG
+PKIFLAGS = -I$(PKINC) -I/usr/include/X11 -I/usr/dt/include -I/cs/include
+PKLFLAGS = -L$(PKLIB) -L/usr/dt/lib -L/cs/lib
+PKRFLAGS = -R$(PKLIB) -R/usr/dt/lib -R/cs/lib
+PKCC_WFLAGS= $(PKCC) $(PKCFLAGS) $(PKIFLAGS) $(PKLFLAGS) $(PKRFLAGS)
+
+# need to define
+# PKTARGETS     -- what to build on make all (other than PKBINFILES and
+#		       PKLIBFILES)
+# PKMODULE      -- subdirectory within backup directory
+# PKBAKFILES    -- files to backup
+# PKBINFILES    -- executables to install
+# PKLIBFILES    -- libraries to install
+# PKINCFILES    -- header files to install
+# PKTOCLEAN     -- files to clean (will also clean PKBINFILES and
+#		       PKLIBFILES)
+# PKSRCFILES    -- files over which to run makedepend
+
+all: $(PKTARGETS) $(PKLIBFILES) $(PKBINFILES) 
+
+# remove tilde-files
+tidy:
+	/usr/bin/rm -f *~
+
+# Clean up after making. 
+clean:
+	/usr/bin/rm -rf *.o core a.out Templates.DB ir.out \
+		$(PKTOCLEAN) $(PKBINFILES) $(PKLIBFILES)
+
+# backup all your files 
+backup:
+	gtar czvf $(PKBAK)/$(PKMODULE)/"`date '+%d%m%y_%H%M%S'`.tar.gz" \
+		$(PKBAKFILES)
+
+# install anything that needs installing
+install: all
+	$(PKINSTALLBIN) $(PKBINFILES)
+	$(PKINSTALLLIB) $(PKLIBFILES)
+	cp -f $(PKINCFILES) $(PKINC)
+
+depend:
+	makedepend $(PKIFLAGS) $(PKSRCFILES)
+
+
+# All .C files depend on their headers
+%.C:    %.h
+
+# Define a rule for building .o from .C files
+.C.o:
+	$(PKCC) $(PKCFLAGS) $(PKIFLAGS) -c $<

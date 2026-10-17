@@ -1,0 +1,77 @@
+
+Actual leaks report    (actual leaks:        15  total size:     979 bytes)
+
+<rtc> Memory Leak (mel):
+Found 6 leaked blocks with total size 576 bytes
+At time of each allocation, the call stack was:
+	[1] operator new() at 0xe390d9e4 
+	[2] PKAIClient::update() at 0x12d7c 
+
+<rtc> Memory Leak (mel):
+Found 2 leaked blocks with total size 192 bytes
+At time of each allocation, the call stack was:
+	[1] operator new() at 0xe390d9e4 
+	[2] PKAIClient::addObject() at 0x126a4 
+
+<rtc> Memory Leak (mel):
+Found leaked block of size 160 bytes at address 0x4d528
+At time of allocation, the call stack was:
+	[1] operator new() at 0xe390d9e4 
+	[2] _vector_new_() at 0xe390dfb4 
+	[3] NETStream::operator >>() at line 445 in "NETStream.C"
+	[4] CLIENTGameServer::connectAck() at line 319 in "CLIENTGameServer.C"
+	[5] CLIENTGameServer::receive() at line 136 in "CLIENTGameServer.C"
+	[6] CLIENTGameServer::static_receive() at line 42 in "CLIENTGameServer.h"
+	[7] DoOtherSources() at 0xe612b0c8 
+	[8] XtAppNextEvent() at 0xe612b57c 
+
+<rtc> Memory Leak (mel):
+Found 2 leaked blocks with total size 20 bytes
+At time of each allocation, the call stack was:
+	[1] _strdup() at 0xe114e1b0 
+	[2] PKPlayerInfo::setUsername() at line 170 in "PKGameClasses.h"
+
+<rtc> Memory Leak (mel):
+Found 2 leaked blocks with total size 18 bytes
+At time of each allocation, the call stack was:
+	[1] _strdup() at 0xe114e1b0 
+	[2] PKPlayerInfo::setHostname() at line 180 in "PKGameClasses.h"
+
+<rtc> Memory Leak (mel):
+Found 2 leaked blocks with total size 13 bytes
+At time of each allocation, the call stack was:
+	[1] _strdup() at 0xe114e1b0 
+	[2] PKPlayerInfo::setAccount() at line 175 in "PKGameClasses.h"
+
+ 
+
+Possible leaks report  (possible leaks:       0  total size:       0 bytes)
+
+ 
+
+Blocks in use report   (blocks in use:      331  total size:   29818 bytes)
+
+ Total  % of Num of  Avg     Allocation call stack
+ Size    All Blocks  Size
+======= ==== ====== ======  =======================================
+   8176  27%      1   8176  permalloc < ExpandQuarkTable < _XrmInternalStringToQuark < XrmInitialize < XtToolkitInitialize < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient 
+   2048   6%      1   2048  XOpenDisplay < XtOpenDisplay < _XtAppInit < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient < main 
+   2048   6%      1   2048  XOpenDisplay < XtOpenDisplay < _XtAppInit < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient < main 
+   2048   6%      1   2048  ExpandQuarkTable < _XrmInternalStringToQuark < XrmInitialize < XtToolkitInitialize < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient < main 
+   1540   5%      3    513  calloc < XtCalloc 
+   1492   5%      1   1492  XtMalloc < _XtHeapAlloc < _XtAllocTMContext < InitPerDisplay < XtOpenDisplay < _XtAppInit < XtOpenApplication < XtAppInitialize 
+   1344   4%      1   1344  _nss_XbyY_buf_alloc < gethostbyname < NETReadWriteSocket::init < NETReadWriteSocket::NETReadWriteSocket < CLIENTGameServer::CLIENTGameServer < PKClientNetworkImplementation::PKClientNetworkImplementation < PKClientNetworkInterface::PKClientNetworkInterface < PKAIClient::PKAIClient 
+   1344   4%      1   1344  calloc < XOpenDisplay < XtOpenDisplay < _XtAppInit < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient < main 
+   1088   3%      9    120  XtMalloc < _XtDependencies 
+   1080   3%     38     28  XtMalloc < _XtTableAddConverter 
+    673   2%     29     23  PutEntry < GetDatabase 
+    648   2%     18     36  _XlcCreateDefaultCharSet < _XlcAddCT 
+    568   1%      1    568  XtMalloc < XtCreateApplicationContext < _XtAppInit < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient < main 
+    432   1%     18     24  _XlcAddCT < _XlcInitCTInfo 
+    392   1%      2    196  XtMalloc < xtWidgetAlloc 
+    384   1%      6     64  calloc < fgetnetconfig 
+    354   1%     18     19  _XlcCreateDefaultCharSet < _XlcAddCT 
+    344   1%      1    344  XtMalloc < NewPerDisplay < InitPerDisplay < XtOpenDisplay < _XtAppInit < XtOpenApplication < XtAppInitialize < PKAIClient::PKAIClient 
+    256  <1%      1    256  calloc < _XInternAtom < XInternAtom < XScreenResourceString < XtScreenDatabase < _XtDisplayInitialize < XtOpenDisplay < _XtAppInit 
+    192  <1%     12     16  PutEntry < GetDatabase 
+ 

@@ -1,0 +1,40 @@
+// This file contains all of the graphics data.
+
+NUMXPMFILES 1
+NUMTYPEIDS 2
+
+// The first XPMFILE is file # 0, and it relies on lk left paddle
+// being in the game. If not, it will not be loaded into memory.
+
+XPMFILE /u/pongbat/graphics/paddles/new/paddle-lk-left.xpm 0 0
+
+// Params to TYPEID: id number, file number, num frames, num anims:
+
+// Left version of lk paddle graphic:
+TYPEID 0 0 11 5
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Sequence <anim id> <number of frames> <frame1> <frame2> <frame3> . . .
+
+SEQUENCE 0 3 0 1 R
+SEQUENCE 1 2 0 D
+SEQUENCE 2 4 2 3 2 D
+SEQUENCE 3 4 4 5 4 D
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+
+// Projectile for lk (left version)
+TYPEID 1 0 0 0
+
+DEFAULTFRAME 525 27 68 15

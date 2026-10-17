@@ -1,0 +1,92 @@
+
+---------------------------
+Fri Sep 5 16:28:20 EDT 1997
+
+crash in client talking to Game server:
+it appears the client crashes if the gameserver crashes; it seems to try
+to send data to the gameserver, and subsequently receives a SIGPIPE
+
+Stack trace"
+	  [1] _libc_write(0x20, 0xb79f0, 0x4, 0xa0d48, 0x8, 0xef196b74), at 0xef13963c
+  [2] _s_sosendxx(0xa0ce0, 0xb79f0, 0xa0d48, 0x4, 0x0, 0xa0d48), at 0xef4f3ea4
+  [3] _send(0xa0ce0, 0xb79f0, 0x4, 0x0, 0x0, 0xa0d28), at 0xef4f22c4
+  [4] NETReadWriteSocket::doSendStruct(this = 0xa0c20, toSend = 0xb79f0, size = 4U), at 0xef4eab58
+  [5] NETReadWriteSocket::flush(this = 0xa0c20), at 0xef4ead00
+  [6] NETReadWriteSocket::endRequest(this = 0xa0c20), at 0xef4eade8
+=>[7] NETStream::endRequest(this = 0x9d120), line 39 in "NETStream.h"
+  [8] CLIENTGameServer::hangup(this = 0x9d118), line 133 in "CLIENTGameServer.C"
+  [9] PKClientNetworkImplementation::hangupOnGameServer(this = 0x876c0), line 83 in "PKClientNetworkImplementation.C"
+  [10] CLIENTGameServer::readException(this = 0x9d118), line 292 in "CLIENTGameServer.C"
+  [11] CLIENTGameServer::static_readException(thus = 0x9d118), line 278 in "CLIENTGameServer.C"
+  [12] NETReadWriteSocket::getStruct(this = 0xa0c20, retBuf = 0xefffee68, size = 4U), at 0xef4ea574
+  [13] NETReadWriteSocket::getInt(this = 0xa0c20), at 0xef4e9f48
+  [14] NETStream::get(this = 0x9d120), line 63 in "NETStream.h"
+  [15] CLIENARG1 = 0x9d0b4, _ARG2 = 0xeffff00c), line 87 in "CLIENTGameServer.C"
+  [17] DoOtherSources(0x6e538, 0x1, 0x1, 0x6e554, 0x0, 0x6e554), at 0xef5c02c0
+  [18] XtAppNextEvent(0x6e538, 0xeffff0d0, 0x6e544, 0x6e700, 0x0, 0x1), at 0xef5c0674
+  [19] XtAppMainLoop(0x6e538, 0xc00015, 0x7a8d4, 0x79360, 0x0, 0x0), at 0xef5b7ac8
+  [20] PKClient::PKClient(0xeffff1c4, 0x1, 0xeffff3ac, 0x0, 0x2, 0xef191490), at 0x20bd4
+  [21] main(0x1, 0xeffff3ac, 0xeffff3b4, 0x55400, 0x1, 0x0), at 0x307e4
+
+---------------------------
+Fri Sep 5 18:38:21 EDT 1997
+
+Playing the first time works, but the second time, things get
+very confused...
+
+---------------------------
+Fri Sep 5 18:38:49 EDT 1997
+
+Having an AI client in the game is an invitation for unreliable results.
+Sometimes, it works; other times, either both players are 'human', or
+both are 'cpu', or (only had this once), the players a flipped.
+
+	-- Benoit
+
+---------------------------
+Mon Sep 8 00:23:22 EDT 1997
+
+bh:  2 clients attempting to connect to gameserver as the same
+client number are both accepted.
+
+---------------------------
+Mon Sep 8 16:14:00 EDT 1997
+ 
+dla:  random "bad drawable" messages occur on one client. Unknown
+cause. I'm looking into it.
+
+---------------------------
+Tue Sep 9 19:11:22 EDT 1997
+
+Marcin tried to join a game just about simultaneously with my
+cancelling said game.  In addition to bringing down pkd, I have
+this stack trace from the joiner:
+
+=>[1] CLIENTMainServer::joinGame(this = (nil), gameID = 269000), line 115 in "CLIENTMainServer.C"
+  [2] PKClientNetworkImplementation::joinGame(this = 0x800d0, gameID = 269000), line 132 in "PKClientNetworkImplementation.C"
+  [3] PKClientNetworkInterface::joinGame(this = 0x89998, gameID = 269000), line 74 in "PKClientNetworkInterface.C"
+  [4] PKMainServerGUI::joinButtonCB(widget = 0x8fcb0, client_data = 0x8cc40, call_data = 0xeffff054), line 125 in "PKMainServerGUI.cxx"
+  [5] ActivateCommon(0x8fcb0, 0x729e0, 0x86298, 0xef78db10, 0x0, 0x0), at 0xef6e01ac
+  [6] HandleActions(0x8fcb0, 0xeffff350, 0x802f0, 0x0, 0x8bb6c, 0x894a8), at 0xef5d4cbc
+  [7] _XtTranslateEvent(0x8fcb0, 0xeffff350, 0x0, 0x4c00048, 0xef5f2488, 0x8fce0), at 0xef5d58ac
+  [8] DispatchEvent(0xeffff350, 0x8fcb0, 0x8, 0x8b6f8, 0x0, 0x1), at 0xef5b6f20
+  [9] DecideToDispatch(0xeffff350, 0x7409c, 0x8, 0x8fcb0, 0x8fcb0, 0x0), at 0xef5b7668
+  [10] XtDispatchEvent(0xeffff350, 0xeffff350, 0x70f84, 0x0, 0x1, 0x70f78), at 0xef5b774c
+  [11] XtAppMainLoop(0x70f78, 0x4c00015, 0x782fc, 0x76c48, 0x0, 0x0), at 0xef5b7ad0
+  [12] PKClient::PKClient(this = 0xeffff878, argc = 1, argv = 0xef
+
+---------------------------
+Tue Sep 9 19:17:42 EDT 1997
+
+Ryan had bad-drawables, as did Marcin, when running pkclient.
+
+Work-around: I was able to let Marcin run it by running one -display <his display>
+
+Permissions problem?
+
+
+---------------------------
+Mon Nov 10 19:00:13 EST 1997
+
+we get a segv with the latest client when one client hangs up during game
+play.

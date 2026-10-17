@@ -1,0 +1,38 @@
+Welcome to Pong Kombat 3! (v0.9)
+
+The program is still under development (of course) but we have enough for you
+to play with and enjoy... as long as you don't mind the occasional crash.
+
+Instructions:
+  Some machine must be running "pkd", found in the bin directory.  We hope to
+  find a dedicated machine to run pkd on once it becomes a bit more stable.
+
+  Once pkd is running, each person wishing to play must run what is currently
+  called "pkclient, found again in bin.  This will soon be renamed pk3.
+
+  One player must start a game, then the other players must click on the game
+  in the game list and select join.
+
+  When setting up the game, there's a bug in the GUI so you won't be able to
+  accurately tell what team your opponent has chosen.  Decide this before you
+  start :)
+
+  You'll probably want to know the keys too...  use the arrow keys to move
+  around the screen and a, s, d are punch, kick, and block.  And no, I won't
+  tell you the special moves :P
+
+  Helpful Note: You'll most likely want to do a "xset r" after running pkclient
+  since it doesn't exit exactly as we'd like it to so it doesn't turn key repeat
+  back on for you.
+
+Bug Reporting:
+  Don't bother.  We already know about a great many bugs, and once we've fixed
+  all of them that we know about, we'll start asking for bug reports.
+
+Us:
+  Dave Akers
+  Jeff Alexander
+  Elaine Chen
+  Benoit Hudson
+  Mike Pelluaer
+

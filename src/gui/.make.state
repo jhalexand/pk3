@@ -1,0 +1,143 @@
+.MAKE_VERSION:	VERSION-1.0
+.BUILT_LAST_MAKE_RUN:
+GUIXpmTable.o:	GUIXpmTable.h /cs/src/pk3/include/hashtable.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/string.h /cs/src/pk3/include/ULDict.h /usr/include/stdlib.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/isa_defs.h
+.BUILT_LAST_MAKE_RUN:
+GUIXpmTable.o:	/usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h
+.BUILT_LAST_MAKE_RUN:
+GUIXpmTable.o:	/usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h /usr/dt/include/Xm/VendorS.h GUIXpmImage.h 
+	/opt/SUNWspro/bin/CC -c GUIXpmTable.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+tidy:
+	echo rm -f *~
+	rm -f *~
+.BUILT_LAST_MAKE_RUN:
+GUIXpmImage.o:	GUIXpmImage.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+GUIXpmImage.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+GUIXpmImage.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/hashtable.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /cs/src/pk3/include/ULDict.h /usr/include/stdlib.h /cs/include/xpm.h 
+	/opt/SUNWspro/bin/CC -c GUIXpmImage.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKChatBox.o:	/usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/va_list.h PKChatBox.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h
+.BUILT_LAST_MAKE_RUN:
+PKChatBox.o:	/usr/include/X11/Xosdefs.h /usr/include/stddef.h /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h
+.BUILT_LAST_MAKE_RUN:
+PKChatBox.o:	/usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h /usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKClientNetworkInterface.h /cs/src/pk3/include/PKids.h /usr/dt/include/Xm/Frame.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h /usr/dt/include/Xm/TextF.h /usr/dt/include/Xm/Text.h 
+	/opt/SUNWspro/bin/CC -c PKChatBox.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKOpeningGUI.o:	PKOpeningGUI.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKOpeningGUI.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKOpeningGUI.o:	/usr/dt/include/Xm/VendorS.h PKClient.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /cs/src/pk3/include/PKKey.h
+.BUILT_LAST_MAKE_RUN:
+PKOpeningGUI.o:	/cs/src/pk3/include/PKClientInterface.h GUIXpmImage.h /cs/src/pk3/include/hashtable.h /cs/src/pk3/include/ULDict.h /cs/src/pk3/include/PKResources.h /cs/src/pk3/include/PKPaths.h /usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h /usr/dt/include/Xm/DrawnB.h /usr/dt/include/Xm/DrawingA.h 
+	/opt/SUNWspro/bin/CC -c PKOpeningGUI.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+install:
+	cp pkclient /cs/src/pk3/bin
+.BUILT_LAST_MAKE_RUN:
+PKPaddleKeys.o:	PKPaddleKeys.h /cs/src/pk3/include/PKKey.h /cs/src/pk3/include/PKids.h /usr/include/sys/time.h /usr/include/sys/feature_tests.h /usr/include/sys/types.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h PKClient.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleKeys.o:	/usr/include/X11/Xosdefs.h /usr/include/stddef.h /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleKeys.o:	/usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h /usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleKeys.o:	/cs/src/pk3/include/PKClientInterface.h /cs/src/pk3/include/PKClientNetworkInterface.h 
+	/opt/SUNWspro/bin/CC -c PKPaddleKeys.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKErrorDialog.o:	PKErrorDialog.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKErrorDialog.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKErrorDialog.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/dt/include/Xm/MessageB.h 
+	/opt/SUNWspro/bin/CC -c PKErrorDialog.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKPaddleColumn.o:	PKPaddleColumn.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleColumn.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleColumn.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/ULDict.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h GUIXpmImage.h /cs/src/pk3/include/hashtable.h GUIXpmTable.h /cs/src/pk3/include/PKPaths.h PKPlayerPanel.h /cs/src/pk3/include/PKids.h /usr/dt/include/Xm/DrawingA.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h
+.BUILT_LAST_MAKE_RUN:
+PKPaddleColumn.o:	/usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/RowColumn.h 
+	/opt/SUNWspro/bin/CC -c PKPaddleColumn.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+clean:
+	echo rm -f *.o pkclient core a.out
+	rm -f -f *.o pkclient core a.out
+.BUILT_LAST_MAKE_RUN:
+pkclient:	/usr/openwin/lib/libXext.so.0 /usr/openwin/lib/libICE.so.6 /usr/openwin/lib/libSM.so.6 /usr/lib/libmp.so.2 /usr/lib/libdl.so.1 /usr/lib/libc.so /opt/SUNWspro/SC4.2/lib/libcx.a /usr/lib/libw.so /opt/SUNWspro/SC4.2/lib/libC_mtstubs.a /opt/SUNWspro/lib/libC.so /opt/SUNWspro/lib/libm.so /usr/lib/libX11.so /usr/lib/libXt.so /usr/dt/lib/libXm.so /cs/lib/libXpm.so /usr/lib/libnsl.so /usr/lib/libsocket.so /opt/SUNWspro/lib/rw7/librwtool.so /cs/lib/librplay.a
+.BUILT_LAST_MAKE_RUN:
+pkclient:	/cs/src/pk3/lib/libdebug.so /cs/src/pk3/lib/libobjectsocket.so /cs/src/pk3/lib/libnetstream.so /cs/src/pk3/lib/libpkresources.so /cs/src/pk3/lib/libpkaudio.so /cs/src/pk3/lib/libpkgraphics.so /cs/src/pk3/lib/libpkclientnetwork.so 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -o pkclient PKOpeningGUI.o  PKKonnectGUI.o  PKChatBox.o  PKMainServerGUI.o  PKPlayerPanel.o  PKGameGatheringGUI.o  PKPaddleKeys.o  PKPaddleColumn.o  PKInfoColumn.o  PKErrorDialog.o  GUIXpmImage.o  GUIXpmTable.o  PKClient.o  main.o -xildoff -L/cs/src/pk3/lib/ -L/usr/dt/lib -L/cs/lib -R/cs/src/pk3/lib -R/usr/dt/lib -R/cs/lib -lpkclientnetwork -lpkgraphics -lpkaudio -lpkresources  -lnetstream -lobjectsocket -ldebug -lrplay -lrwtool -lsocket -lnsl  -lXpm -lXm -lXt -lX11 
+	echo "make finished at " `date`
+.BUILT_LAST_MAKE_RUN:
+PKMainServerGUI.o:	PKMainServerGUI.h /usr/include/stdlib.h /usr/include/sys/feature_tests.h /usr/include/string.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h
+.BUILT_LAST_MAKE_RUN:
+PKMainServerGUI.o:	/usr/include/X11/Xosdefs.h /usr/include/stddef.h /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h
+.BUILT_LAST_MAKE_RUN:
+PKMainServerGUI.o:	/usr/dt/include/Xm/VirtKeys.h /usr/dt/include/Xm/VendorS.h PKClient.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h
+.BUILT_LAST_MAKE_RUN:
+PKMainServerGUI.o:	/cs/src/pk3/include/PKKey.h /cs/src/pk3/include/PKClientInterface.h PKGame.h /opt/SUNWspro/SC4.2/include/CC/strings.h /usr/include/strings.h PKUser.h PKChatBox.h /cs/src/pk3/include/PKClientNetworkInterface.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h /usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/List.h /usr/dt/include/Xm/RowColumn.h 
+	/opt/SUNWspro/bin/CC -c PKMainServerGUI.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKInfoColumn.o:	PKInfoColumn.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKInfoColumn.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKInfoColumn.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/dt/include/Xm/Label.h /usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/RowColumn.h /usr/dt/include/Xm/ToggleB.h /cs/src/pk3/include/PKClientNetworkInterface.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /usr/include/stdlib.h
+.BUILT_LAST_MAKE_RUN:
+PKInfoColumn.o:	PKPlayerPanel.h 
+	/opt/SUNWspro/bin/CC -c PKInfoColumn.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKGameGatheringGUI.o:	PKGameGatheringGUI.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKGameGatheringGUI.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKGameGatheringGUI.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKids.h PKPlayerPanel.h PKClient.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h
+.BUILT_LAST_MAKE_RUN:
+PKGameGatheringGUI.o:	/cs/src/pk3/include/PKKey.h /cs/src/pk3/include/PKClientInterface.h /cs/src/pk3/include/PKClientNetworkInterface.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h /usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/RowColumn.h 
+	/opt/SUNWspro/bin/CC -c PKGameGatheringGUI.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+main.o:	PKClient.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+main.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+main.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /cs/src/pk3/include/PKKey.h
+.BUILT_LAST_MAKE_RUN:
+main.o:	/cs/src/pk3/include/PKClientInterface.h 
+	/opt/SUNWspro/bin/CC -c main.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	PKClient.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /cs/src/pk3/include/PKKey.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/cs/src/pk3/include/PKClientInterface.h PKOpeningGUI.h PKKonnectGUI.h PKMainServerGUI.h PKGameGatheringGUI.h PKObjectList.h /cs/src/pk3/include/PKClientObject.h PKPaddleKeys.h PKErrorDialog.h /cs/src/pk3/include/PKClientNetworkInterface.h /cs/src/pk3/include/PKResources.h /cs/src/pk3/include/PKGraphicsInterface.h /usr/dt/include/Xm/MainW.h /cs/src/pk3/include/PKAudioPlayer.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tvhdict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/compiler.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/opt/SUNWspro/SC4.2/include/CC/rw7/rw/xvhdict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tvsldict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tislist.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/islist.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tooldefs.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/defs.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/generic.h /opt/SUNWspro/SC4.2/include/CC/generic.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/mempool.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tasslnk.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/opt/SUNWspro/SC4.2/include/CC/rw7/rw/tpvector.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/pvector.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/edefs.h /cs/src/pk3/include/PKAudioClass.h /cs/include/rplay.h /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/sys/netconfig.h /usr/include/netinet/in.h /usr/include/sys/stream.h /usr/include/sys/vnode.h /usr/include/sys/t_lock.h /usr/include/sys/machlock.h /usr/include/sys/sleepq.h /usr/include/sys/turnstile.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/usr/include/sys/param.h /usr/include/sys/unistd.h /usr/include/sys/pirec.h /usr/include/sys/mutex.h /usr/include/sys/rwlock.h /usr/include/sys/semaphore.h /usr/include/sys/condvar.h /usr/include/sys/cred.h /usr/include/sys/resource.h /usr/include/vm/seg_enum.h /usr/include/sys/poll.h /usr/include/sys/strmdep.h /usr/include/sys/model.h /usr/include/sys/byteorder.h /opt/SUNWspro/SC4.2/include/CC/fstream.h /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	/usr/include/pwd.h /usr/include/unistd.h /usr/include/sys/utsname.h /cs/src/pk3/include/Exception.h /usr/dt/include/Xm/DrawingA.h /usr/dt/include/Xm/RowColumn.h /usr/dt/include/Xm/MessageB.h /usr/dt/include/Xm/CascadeBG.h /usr/dt/include/Xm/PushBG.h PKCyraxLeftKeys.h PKCyraxRightKeys.h PKJadeLeftKeys.h PKJadeRightKeys.h PKKabalLeftKeys.h PKKabalRightKeys.h PKLiuKangLeftKeys.h PKLiuKangRightKeys.h PKReptileLeftKeys.h PKReptileRightKeys.h PKScorpionLeftKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKClient.o:	PKScorpionRightKeys.h PKSmokeLeftKeys.h PKSmokeRightKeys.h PKSonyaLeftKeys.h PKSonyaRightKeys.h PKSubZeroLeftKeys.h PKSubZeroRightKeys.h 
+	/opt/SUNWspro/bin/CC -c PKClient.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKKonnectGUI.o:	PKKonnectGUI.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKKonnectGUI.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKKonnectGUI.o:	/usr/dt/include/Xm/VendorS.h PKClient.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKGameClasses.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /usr/include/stdlib.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/VectorMath.h /usr/include/math.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /cs/src/pk3/include/PKKey.h
+.BUILT_LAST_MAKE_RUN:
+PKKonnectGUI.o:	/cs/src/pk3/include/PKClientInterface.h /cs/src/pk3/include/PKResources.h /usr/dt/include/Xm/Text.h /usr/dt/include/Xm/TextF.h /usr/dt/include/Xm/Label.h /usr/dt/include/Xm/PushB.h /usr/dt/include/Xm/Form.h /usr/dt/include/Xm/BulletinB.h 
+	/opt/SUNWspro/bin/CC -c PKKonnectGUI.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include
+.BUILT_LAST_MAKE_RUN:
+PKPlayerPanel.o:	PKPlayerPanel.h /usr/dt/include/Xm/Xm.h /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+.BUILT_LAST_MAKE_RUN:
+PKPlayerPanel.o:	/usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/string.h /usr/include/X11/Core.h /usr/include/X11/Composite.h /usr/include/X11/Constraint.h /usr/include/X11/Object.h /usr/include/X11/RectObj.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h /usr/dt/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h /usr/dt/include/Xm/VirtKeys.h
+.BUILT_LAST_MAKE_RUN:
+PKPlayerPanel.o:	/usr/dt/include/Xm/VendorS.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/va_list.h /usr/include/assert.h /cs/src/pk3/include/PKClientNetworkInterface.h /cs/src/pk3/include/PKGameClasses.h /usr/include/stdlib.h PKInfoColumn.h PKPaddleColumn.h /cs/src/pk3/include/ULDict.h /usr/dt/include/Xm/Frame.h /usr/dt/include/Xm/RowColumn.h
+.BUILT_LAST_MAKE_RUN:
+PKPlayerPanel.o:	
+	/opt/SUNWspro/bin/CC -c PKPlayerPanel.C -g -DDEBUG  -I/cs/include -I/usr/include/X11 -I/usr/dt/include  -I/cs/src/pk3/include

@@ -1,0 +1,18 @@
+"Round"  sounds/round
+"One"    sounds/one
+"Two"    sounds/two
+"Three"  sounds/three
+
+"Fight"  sounds/fight
+
+intro music  sounds/introMusic  -- play in loop, appropriate until game gui
+selection music  sounds/selectmusic -- play loop in game gui 'til game start
+
+need to record someone saying "Team" (for "Team" "One" "Wins")
+
+"Cyrax"  sounds/cyrax
+"Jade"   -- need this
+"Kabal"  sounds/kabal
+"Liu Kang"  sounds/liukang
+"Reptile" -- need this
+"Sub Zero" sounds/subzero

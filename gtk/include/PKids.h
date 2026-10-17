@@ -1,0 +1,176 @@
+/****************************************************************/
+/*    NAME:                                                     */
+/*    ACCT: dla                                                 */
+/*    FILE: PKids.h                                             */
+/*    ASGN:                                                     */
+/*    DATE: Sun Apr 20 18:51:19 1997                            */
+/****************************************************************/
+
+
+#ifndef PKIDS_HEADER
+#define PKIDS_HEADER
+
+enum PKBackgroundID {
+
+  PK_BACKGROUND_LAVA = 0,
+  PK_BACKGROUND_MAC = 1,
+  PK_BACKGROUND_SPACE = 2,
+  PK_BACKGROUND_PETER = 3,
+  PK_BACKGROUND_BOWLING = 4,
+  PK_BACKGROUND_MOUNTAINS = 5,
+  PK_BACKGROUND_SUNNY = 6,
+  PK_BACKGROUND_SWIRL = 7,
+  PK_BACKGROUND_FIRE = 8
+};
+
+#define NUM_BACKGROUNDS 9
+
+enum PKTypeID {
+    PK_TYPE_INVALID = -1,
+    PK_TYPE_BALL = 0,
+
+    //characters/paddles.  Odd names are on left side, even on right.
+//    PK_TYPE_PADDLE_MIN = 1, // the min integer number of a paddle
+//    PK_TYPE_PADDLE_MAX = 18, // the max integer number of a paddle
+    
+    PK_TYPE_CYRAX_1 = 7,
+    PK_TYPE_CYRAX_2 = 8,
+    PK_TYPE_JADE_1 = 3,
+    PK_TYPE_JADE_2 = 4,
+    PK_TYPE_KABAL_1 = 5,
+    PK_TYPE_KABAL_2 = 6,
+    PK_TYPE_LIU_KANG_1 = 1,
+    PK_TYPE_LIU_KANG_2 = 2,
+    PK_TYPE_REPTILE_1 = 9,
+    PK_TYPE_REPTILE_2 = 10,
+    PK_TYPE_SCORPION_1 = 11,
+    PK_TYPE_SCORPION_2 = 12,
+    PK_TYPE_SMOKE_1 = 13,
+    PK_TYPE_SMOKE_2 = 14,
+    PK_TYPE_SONYA_1 = 15,
+    PK_TYPE_SONYA_2 = 16,
+    PK_TYPE_SUB_ZERO_1 = 17,
+    PK_TYPE_SUB_ZERO_2 = 18,
+    
+    PK_TYPE_WALL_HORIZONTAL = 20,
+    PK_TYPE_WALL_VERTICAL = 21,
+
+    PK_TYPE_LK_LEFT_PROJECTILE = 22,
+    PK_TYPE_LK_RIGHT_PROJECTILE = 23,
+    PK_TYPE_EXPLOSION = 24,
+    PK_TYPE_SZ_LEFT_PROJECTILE = 25,
+    PK_TYPE_SZ_RIGHT__PROJECTILE = 26,
+    PK_TYPE_CYRAX_LEFT_NET = 27, //left player net
+    PK_TYPE_CYRAX_RIGHT_NET = 28, //right player net
+    PK_TYPE_JADE_LEFT_PROJECTILE = 29,
+    PK_TYPE_JADE_RIGHT_PROJECTILE = 30,
+    PK_TYPE_REPTILE_LEFT_PROJECTILE = 31,
+    PK_TYPE_REPTILE_RIGHT_PROJECTILE = 32,
+    PK_TYPE_CYRAX_LEFT_BOMB = 33,
+    PK_TYPE_CYRAX_RIGHT_BOMB = 34,
+    PK_TYPE_KABAL_LEFT_PROJECTILE = 35,
+    PK_TYPE_KABAL_RIGHT_PROJECTILE = 36,
+    PK_TYPE_KABAL_LEFT_WHEEL_PROJECTILE = 37,
+    PK_TYPE_CYRAX_LEFT_NUKE = 38,
+    PK_TYPE_CYRAX_RIGHT_NUKE = 39,
+    PK_TYPE_BLOOD = 40,
+    PK_TYPE_KABAL_RIGHT_WHEEL_PROJECTILE = 41
+
+};
+
+enum PKActionID {
+    PK_ACTION_PADDLE_UP = 0,
+    PK_ACTION_PADDLE_DOWN = 1,
+    PK_ACTION_PADDLE_LEFT = 3,
+    PK_ACTION_PADDLE_RIGHT = 4,
+    PK_ACTION_PADDLE_PUNCH = 5,
+    PK_ACTION_PADDLE_KICK = 6,
+    PK_ACTION_PADDLE_CUT_UP = 7,
+    PK_ACTION_PADDLE_CUT_DOWN = 8,
+    PK_ACTION_PADDLE_SWEEP = 9,
+    PK_ACTION_PADDLE_SPECIAL_1 = 10,
+    PK_ACTION_PADDLE_SPECIAL_2 = 12,
+    PK_ACTION_PADDLE_SPECIAL_3 = 13,
+    PK_ACTION_PADDLE_STOP = 14,
+    PK_ACTION_PADDLE_STOP_VERTICAL = 15,
+    PK_ACTION_PADDLE_STOP_HORIZONTAL = 16,
+    PK_ACTION_PADDLE_BLOCK = 17,
+    PK_ACTION_PADDLE_UNBLOCK = 18,
+    PK_ACTION_PAUSE = 19,
+    PK_ACTION_UNPAUSE = 20
+};
+
+enum PKAnimID {
+  PK_ANIM_NOT = -1,
+  PK_ANIM_PADDLE_BLOCK = 0,
+  PK_ANIM_PADDLE_UNBLOCK = 1,
+  PK_ANIM_KICK = 2,
+  PK_ANIM_PUNCH = 3,
+  PK_ANIM_UPPERCUT = 4,
+  PK_ANIM_UPPERCUT_DOWN = 5,
+  PK_ANIM_SWEEP_KICK = 6,
+  PK_ANIM_PADDLE_FREEZE = 7,
+  PK_ANIM_SPECIAL_1 = 8,
+  PK_ANIM_SPECIAL_2 = 9,
+  PK_ANIM_EXPLODE = 10,
+  PK_ANIM_PADDLE_CATCH = 11,
+  PK_ANIM_INVISIBLE = 12,
+  PK_ANIM_VISIBLE = 13,
+  PK_ANIM_BOMB_ROTATE = 14,
+  PK_ANIM_PADDLE_SPIN = 15
+  };
+
+enum PKKombatKodeID {
+  PK_KOMBAT_KODE_NONE = 0
+};
+
+enum PKAILevel {
+  PK_AI_HUMAN = 0,
+  PK_AI_DUMB = 1
+};
+
+enum PKSoundID {
+
+  PK_SOUND_GUY_HIT = 0,        //baseGuy
+  PK_SOUND_GIRL_HIT = 1,       //baseGirl
+  PK_SOUND_KANG_HIT = 2,
+  PK_SOUND_GUY_BLOOD = 3,
+  PK_SOUND_GIRL_BLOOD = 4,
+  PK_SOUND_KANG_BLOOD = 5,
+  PK_SOUND_GUY_DEATH = 6,
+  PK_SOUND_GIRL_DEATH = 7,
+  PK_SOUND_KANG_DEATH = 8,
+  PK_SOUND_CYRAX_BOMB_DROP = 9,
+  PK_SOUND_CYRAX_BOMB_EXPLODE = 10,
+  PK_SOUND_CYRAX_NET_THORW = 11,
+  PK_SOUND_CYRAX_NET_CATCH = 12,
+  PK_SOUND_JADE_PROJ_THROW = 13,
+  PK_SOUND_JADE_TRIPLE_PROJ = 14,
+  PK_SOUND_JADE_INVULN = 15,
+  PK_SOUND_KANG_KICK = 16,
+  PK_SOUND_KANG_FIRE_THROW = 17,
+  PK_SOUND_KABAL_PROJ_THROW = 18,
+  PK_SOUND_KABAL_SPIN = 19,
+  PK_SOUND_KABAL_WHEEL = 20,
+  PK_SOUND_REPTILE_PROJ_THROW = 21,
+  PK_SOUND_REPTILE_INVIS = 22,
+  PK_SOUND_SUB_PROJ_THROW = 23,
+  PK_SOUND_SUB_PROJ_HIT = 24,
+  PK_SOUND_SUB_PROJ_SHOWER = 25,
+  PK_SOUND_BLOCK = 26,          //donut
+  PK_SOUND_UNBLOCK = 27,        //morph
+  PK_SOUND_FIGHT = 28,          //FIGHT!
+  PK_SOUND_TOASTY = 29,         //toasty
+  PK_SOUND_ROUND = 30,          // "Round" (as in one/two/three)
+  PK_SOUND_ONE = 31,            // "One" look, support for rounds!
+  PK_SOUND_TWO = 32,            // "Two"
+  PK_SOUND_THREE = 33           // "Three"
+};
+
+
+typedef int PKID;
+
+const int PK_PADDLE_MIN = 1;
+const int PK_PADDLE_MAX = 18;
+
+#endif

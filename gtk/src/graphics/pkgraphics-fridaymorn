@@ -1,0 +1,69 @@
+// This file contains all of the graphics data.
+
+NUMXPMFILES 2
+NUMTYPEIDS 3
+
+// The first XPMFILE is file # 0, and it relies on lk right paddle
+// being in the game. If not, it will not be loaded into memory.
+
+XPMFILE /u/pongbat/graphics/paddles/new/paddle-lk-right.xpm 0 1
+XPMFILE /u/pongbat/graphics/objects/ball.xpm 1 -1 
+
+// Params to TYPEID: id number, file number, num frames, num anims:
+
+// Left version of lk paddle graphic:
+TYPEID 1 0 20 7
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+
+//FRAME 11 55 315 50 65
+//FRAME 12 180 316 75 35
+//FRAME 13 289 316 30 30
+//FRAME 14 395 316 90 30
+
+// Sequence <anim id> <number of frames> <frame1> <frame2> <frame3> . . .
+
+SEQUENCE 0 3 0 1 R
+SEQUENCE 1 2 0 D
+SEQUENCE 2 4 4 5 4 D
+SEQUENCE 3 4 2 3 2 D
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+
+// The ball (kinda important)
+
+TYPEID 0 1 0 0 
+
+DEFAULTFRAME 30 7 12 12
+
+// Projectile for lk (left version)
+TYPEID 2 0 0 0
+
+DEFAULTFRAME 525 27 68 15

@@ -1,0 +1,174 @@
+(omt_version 4 2)
+#  %W% %G%  
+
+(omt_module
+ (key 17853)
+ (name MAIN)
+ (language NONE)
+ (fcode_max 0)
+ (omt_model
+  (omt_class
+   (key 18066)
+   (name MAINServer))
+  (omt_class
+   (key 18241)
+   (name MAINUserList))
+  (omt_class
+   (key 18783)
+   (name MAINConnectedUser))
+  (omt_class
+   (key 19068)
+   (name MAINGameList))
+  (omt_class
+   (key 19375)
+   (name MAINActiveGame))
+  (omt_class
+   (key 19672)
+   (name MAINNetwork))
+  (binary_association
+   (key 18477)
+   (role
+    (key 18480)
+    (class 18241)
+    (mult 1 2))
+   (role
+    (key 18482)
+    (class 18066)
+    (mult 1 2)))
+  (binary_association
+   (key 18957)
+   (role
+    (key 18959)
+    (class 18783)
+    (mult 0 *))
+   (role
+    (key 18961)
+    (class 18241)
+    (mult 1 2)))
+  (binary_association
+   (key 19198)
+   (role
+    (key 19200)
+    (class 19068)
+    (mult 1 2))
+   (role
+    (key 19202)
+    (class 18066)
+    (mult 1 2)))
+  (binary_association
+   (key 19519)
+   (role
+    (key 19521)
+    (class 19375)
+    (mult 0 *))
+   (role
+    (key 19523)
+    (class 19068)
+    (mult 1 2)))
+  (binary_association
+   (key 19814)
+   (role
+    (key 19816)
+    (class 19672)
+    (mult 1 2))
+   (role
+    (key 19818)
+    (class 18066)
+    (mult 1 2)))
+  (binary_association
+   (key 20356)
+   (role
+    (key 20358)
+    (class 19375)
+    (mult 1 2))
+   (role
+    (key 20359)
+    (class 18241)
+    (mult 1 2))))
+ (omt_image
+  (sheet
+   (key 17859)
+   (name 1)
+   (width 650)
+   (height 800)
+   (class_box
+    (key 18073)
+    (represents 18066)
+    (frame
+     (loc 239 87)
+     (dimensions 83 41)))
+   (class_box
+    (key 18248)
+    (represents 18241)
+    (frame
+     (loc 179 404)
+     (dimensions 92 41)))
+   (class_box
+    (key 18790)
+    (represents 18783)
+    (frame
+     (loc 146 547)
+     (dimensions 132 41)))
+   (class_box
+    (key 19075)
+    (represents 19068)
+    (frame
+     (loc 409 175)
+     (dimensions 99 41)))
+   (class_box
+    (key 19384)
+    (represents 19375)
+    (frame
+     (loc 404 291)
+     (dimensions 115 41)))
+   (class_box
+    (key 19679)
+    (represents 19672)
+    (frame
+     (loc 62 208)
+     (dimensions 93 41)))
+   (binary_rel_arc
+    (key 18484)
+    (represents 18477)
+    (boxes 18248 18073)
+    (points
+     (249 403)
+     (249 128)))
+   (binary_rel_arc
+    (key 18962)
+    (represents 18957)
+    (boxes 18790 18248)
+    (points
+     (238 546)
+     (238 445)))
+   (binary_rel_arc
+    (key 19203)
+    (represents 19198)
+    (boxes 19075 18073)
+    (points
+     (408 195)
+     (305 195)
+     (305 128)))
+   (binary_rel_arc
+    (key 19524)
+    (represents 19519)
+    (boxes 19384 19075)
+    (points
+     (456 290)
+     (456 216)))
+   (binary_rel_arc
+    (key 19819)
+    (represents 19814)
+    (boxes 19679 18073)
+    (points
+     (108 207)
+     (108 108)
+     (238 108)))
+   (binary_rel_arc
+    (key 20360)
+    (represents 20356)
+    (boxes 19384 18248)
+    (points
+     (448 332)
+     (448 427)
+     (271 427))))))

@@ -1,0 +1,22 @@
+/*************************************************************************/
+/*    NAME: Jeff Alexander                                               */
+/*    FILE: MAINdefs.h                                                   */
+/*    ASGN: Final Project                                                */
+/*    DATE: Sat Apr 26 21:13:30 1997                                     */
+/*************************************************************************/
+
+#ifndef MAINDEFS_HEADER
+#define MAINDEFS_HEADER
+
+#define MAX_GAMES 10
+#define MAX_USERS 50
+#define MAX_SOCKETS 60
+
+#define MAIN_SERVER_CLIENT_PORT 4380
+#define MAIN_SERVER_GAME_PORT 4381
+#define MAX_PENDING 10
+
+#define PLAYERS_PER_GAME 4
+
+
+#endif

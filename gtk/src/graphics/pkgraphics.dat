@@ -1,0 +1,1003 @@
+// This file contains all of the graphics data.
+
+NUMXPMFILES 15
+NUMTYPEIDS 51
+
+// The first XPMFILE is file # 0, and it relies on lk right paddle
+// being in the game. If not, it will not be loaded into memory.
+
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-lk-right.xpm 0 1
+XPMFILE /cs/src/pk3/graphics/objects/ball.xpm 1 -1 
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-lk-left.xpm 2 2
+XPMFILE /cs/src/pk3/graphics/objects/explosion.xpm 3 -1
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-sz-right.xpm 4 17
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-rep-left.xpm 5 10
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-jade-right.xpm 6 3
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-cyrax-right.xpm 7 7
+XPMFILE /cs/src/pk3/graphics/objects/blood.xpm 8 -1
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-kabal-left.xpm 9 6
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-jade-left.xpm 10 4
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-rep-right.xpm 11 9
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-kabal-right.xpm 12 5
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-cyrax-left.xpm 13 8
+XPMFILE /cs/src/pk3/graphics/paddles/new/paddle-sz-left.xpm 14 18
+
+// Params to TYPEID: id number, file number, num frames, num anims:
+
+// Left version of lk paddle graphic:
+TYPEID 1 0 33 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+FRAME 21 25 381 48 55
+FRAME 22 73 381 55 25
+FRAME 23 124 381 55 55
+FRAME 24 171 381 30 55
+FRAME 25 219 381 52 55
+FRAME 26 269 381 55 25
+FRAME 27 324 381 56 55
+FRAME 28 371 382 30 55
+FRAME 29 26 452 55 25
+
+// Now the caught paddle image:
+
+FRAME 30 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 31 479 318 30 55 
+FRAME 32 508 317 30 55
+
+//FRAME 11 55 315 50 65
+//FRAME 12 180 316 75 35
+//FRAME 13 289 316 30 30
+//FRAME 14 395 316 90 30
+
+// Sequence <anim id> <number of frames> <frame1> <frame2> <frame3> . . .
+
+SEQUENCE 0 3 0 1 R
+SEQUENCE 1 2 0 D
+SEQUENCE 2 4 4 5 4 D
+SEQUENCE 3 4 2 3 2 D
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+SEQUENCE 7 2 20 B
+// Spinning kick"  -- designed to be moved as it animates..
+SEQUENCE 8 9 21 22 23 24 25 26 27 28 B
+// Now flat kick"
+SEQUENCE 9 2 29 R
+// Catch:
+SEQUENCE 11 2 30 R
+// Spin:
+SEQUENCE 15 3 31 32 B
+
+// The ball (kinda important)
+
+TYPEID 0 1 0 0 
+
+DEFAULTFRAME 30 7 12 12
+
+// The left facing (right) paddle for LK:
+
+TYPEID 2 2 33 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 85 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+// That spinning kick thing:
+FRAME 21 25 381 48 55
+FRAME 22 73 381 55 25
+FRAME 23 124 381 55 55
+FRAME 24 171 381 30 55
+FRAME 25 219 381 52 55
+FRAME 26 269 381 55 25
+FRAME 27 324 381 56 55
+FRAME 28 371 382 30 55
+FRAME 29 26 452 55 25
+
+// Now the caught paddle image:
+
+FRAME 30 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 31 479 318 30 55 
+FRAME 32 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Spinning kick"  -- designed to be moved as it animates..
+SEQUENCE 8 9 21 22 23 24 25 26 27 28 B
+// Now flat kick"
+SEQUENCE 9 2 29 R
+// Catch:
+SEQUENCE 11 2 30 R
+// Spin:
+SEQUENCE 15 3 31 32 B
+
+
+
+// Projectile for lk (left version)
+TYPEID 22 0 0 0
+
+DEFAULTFRAME 525 27 68 15
+
+TYPEID 23 2 0 0
+
+DEFAULTFRAME 525 27 68 15
+
+// Explosion:
+
+TYPEID 24 3 3 11
+
+DEFAULTFRAME 133 18 5 5 
+
+FRAME 0 8 16 20 15
+FRAME 1 49 18 30 40
+FRAME 2 89 20 45 40
+
+// Explosion animation:
+
+SEQUENCE 10 7 0 0 1 1 2 2 D
+
+// Sub zero!! (left, facing right sz-right)
+
+TYPEID 17 4 24 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+// Now the caught paddle image:
+
+FRAME 21 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 22 479 318 30 55 
+FRAME 23 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Catch:
+SEQUENCE 11 2 21 R
+// Spin:
+SEQUENCE 15 3 22 23 B
+
+
+TYPEID 25 4 0 0
+
+DEFAULTFRAME 556 21 60 20
+
+// Left facing (RIGHT) reptile:
+
+TYPEID 10 5 25 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 95 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+// Now an invisible frame!:
+FRAME 21 341 173 5 5 
+// Now the caught paddle image:
+
+FRAME 22 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 23 479 318 30 55 
+FRAME 24 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Invisibility:
+SEQUENCE 12 2 21 R
+// Catch:
+SEQUENCE 11 2 22 R
+// Spin:
+SEQUENCE 15 3 23 24 B
+
+TYPEID 32 5 0 0
+
+DEFAULTFRAME 521 28 70 15
+
+// Jade left player (right facing):
+
+TYPEID 3 6 26 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+// Frames for projectile invulnerability
+FRAME 21 32 439 30 55
+FRAME 22 65 439 30 55
+
+// Now the caught paddle image:
+
+FRAME 23 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 24 479 318 30 55 
+FRAME 25 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Proj invuln:
+SEQUENCE 8 9 21 21 21 21 22 22 22 22 B
+// Catch:
+SEQUENCE 11 2 23 R
+// Spin:
+SEQUENCE 15 3 24 25 B
+
+
+TYPEID 29 6 0 0
+
+DEFAULTFRAME 548 32 40 40
+
+// Cyrax: (left, right facing)
+
+TYPEID 7 7 24 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+// Now the caught paddle image:
+
+FRAME 21 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 22 479 318 30 55 
+FRAME 23 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Catch:
+SEQUENCE 11 2 21 R
+// Spin:
+SEQUENCE 15 3 22 23 B
+
+TYPEID 33 7 4 15
+
+// Rotating bomb:
+
+DEFAULTFRAME 24 374 16 16
+FRAME 0 24 374 16 16
+FRAME 1 40 374 16 16
+FRAME 2 55 374 16 16
+FRAME 3 70 374 16 16 
+
+SEQUENCE 14 5 0 1 2 3 B
+
+// Left net (cyraxleft):
+
+TYPEID 27 7 0 0
+
+DEFAULTFRAME 573 50 55 100
+
+// Left nuke:
+
+TYPEID 38 7 3 11
+
+DEFAULTFRAME 60 440 120 75
+FRAME 0 60 440 120 75
+FRAME 1 247 443 200 80
+FRAME 2 466 444 200 80
+
+// It explodes:
+
+SEQUENCE 10 7 0 0 1 1 2 2 R
+
+//TYPEID 50 0 0 0
+
+// Blood!!!
+
+TYPEID 40 8 3 11
+
+// Empty default frame.
+DEFAULTFRAME 91 71 5 5
+
+FRAME 0 11 20 10 10
+FRAME 1 52 21 38 40 
+FRAME 2 91 21 40 45
+
+SEQUENCE 10 19 0 0 0 1 1 1 2 2 2 0 0 0 1 1 1 2 2 2 D
+
+// Kabal left facing player:
+
+TYPEID 6 9 25 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 95 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+// Now the flat "punch" frame:
+FRAME 21 84 372 90 60
+// Now the caught paddle image:
+
+FRAME 22 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 23 479 318 30 55 
+FRAME 24 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Flat "punch":
+SEQUENCE 8 2 21 R
+// Catch:
+SEQUENCE 11 2 22 R
+// Spin:
+SEQUENCE 15 3 23 24 B
+
+// The regular projectile:
+
+TYPEID 36 9 0 0
+
+DEFAULTFRAME 568 29 40 40
+
+// Now the wheel projectile:
+
+TYPEID 41 9 2 9
+DEFAULTFRAME 362 433 60 100
+FRAME 0 362 433 60 100
+FRAME 1 531 432 65 115
+
+SEQUENCE 8 3 0 1 B
+
+// Jade right player:
+
+TYPEID 4 10 26 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 95 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+
+// Frames for projectile invulnerability
+FRAME 21 32 439 30 55
+FRAME 22 65 439 30 55
+
+// Now the caught paddle image:
+
+FRAME 23 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 24 479 318 30 55 
+FRAME 25 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Proj invuln:
+SEQUENCE 8 9 21 21 21 21 22 22 22 22 B
+// Catch:
+SEQUENCE 11 2 23 R
+// Spin:
+SEQUENCE 15 3 24 25 B
+
+// Jade right projectile:
+
+TYPEID 30 10 0 0
+
+DEFAULTFRAME 548 32 40 40
+
+// Reptile left player: (gasp)
+
+TYPEID 9 11 25 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+// Now an invisible frame!:
+FRAME 21 341 173 5 5 
+// Now the caught paddle image:
+
+FRAME 22 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 23 479 318 30 55 
+FRAME 24 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Invisibility:
+SEQUENCE 12 2 21 R
+// Catch:
+SEQUENCE 11 2 22 R
+// Spin:
+SEQUENCE 15 3 23 24 B
+
+// Reptile's left projectile:
+
+TYPEID 31 11 0 0
+
+DEFAULTFRAME 521 28 70 15
+
+// Kabal left player:
+
+TYPEID 5 12 25 16
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+FRAME 2 159 27 40 65
+FRAME 3 208 27 50 65
+FRAME 4 306 27 40 65
+FRAME 5 356 27 50 65
+FRAME 6 57 145 90 65
+FRAME 7 180 127 70 45
+FRAME 8 284 113 85 65
+FRAME 9 378 118 55 85
+FRAME 10 462 118 120 90
+
+// Frames for sweep kick:
+
+FRAME 11 85 315 90 65
+FRAME 12 211 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 389 316 95 30
+
+// Frames for downwards uppercut:
+
+FRAME 15 57 209 90 65
+FRAME 16 180 227 70 45
+FRAME 17 284 241 85 65
+FRAME 18 378 236 55 85
+FRAME 19 462 236 120 90
+FRAME 20 43 29 30 55
+
+// Now the flat "punch" frame:
+FRAME 21 84 372 90 60
+// Now the caught paddle image:
+
+FRAME 22 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 23 479 318 30 55 
+FRAME 24 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Flat "punch":
+SEQUENCE 8 2 21 R
+// Catch:
+SEQUENCE 11 2 22 R
+// Spin:
+SEQUENCE 15 3 23 24 B
+
+// Now the wheel projectile:
+
+TYPEID 37 12 2 9
+DEFAULTFRAME 362 433 60 100
+FRAME 0 362 433 60 100
+FRAME 1 531 432 65 115
+
+SEQUENCE 8 3 0 1 B
+
+// The regular projectile:
+
+TYPEID 35 12 0 0
+
+DEFAULTFRAME 568 29 40 40
+
+// Cyrax right player:
+
+TYPEID 8 13 24 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 95 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+
+// Now the caught paddle image:
+
+FRAME 21 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 22 479 318 30 55 
+FRAME 23 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Catch:
+SEQUENCE 11 2 21 R
+// Spin:
+SEQUENCE 15 3 22 23 B
+
+// Right Rotating bomb:
+
+TYPEID 34 13 4 15
+
+DEFAULTFRAME 24 374 16 16
+FRAME 0 24 374 16 16
+FRAME 1 40 374 16 16
+FRAME 2 55 374 16 16
+FRAME 3 70 374 16 16 
+
+SEQUENCE 14 5 0 1 2 3 B
+
+// Right net (cyraxleft):
+
+TYPEID 28 13 0 0
+
+DEFAULTFRAME 573 50 55 100
+
+// Right nuke:
+
+TYPEID 39 13 3 11
+
+DEFAULTFRAME 6 440 120 75
+FRAME 0 6 440 120 75
+FRAME 1 170 443 200 80
+FRAME 2 382 444 200 80
+
+// It explodes:
+
+SEQUENCE 10 7 0 0 1 1 2 2 R
+
+// Sub zero right (finally!! the end!!!)
+
+TYPEID 18 14 24 16
+
+DEFAULTFRAME 15 27 30 55
+FRAME 0 80 27 35 65
+FRAME 1 120 27 35 65
+// And now for .. punch!
+FRAME 2 163 27 40 65
+FRAME 3 220 27 47 65
+// And kick:
+FRAME 4 310 27 40 65
+FRAME 5 367 27 47 65
+// And uppercut:
+FRAME 6 78 145 90 65
+FRAME 7 190 127 70 45
+FRAME 8 305 113 85 65
+FRAME 9 405 118 55 85
+FRAME 10 526 118 120 90
+// And sweep kick frames:
+FRAME 11 45 315 90 65
+FRAME 12 164 316 95 35
+FRAME 13 289 316 30 30
+FRAME 14 429 316 95 30
+// And downwards uppercut frames:
+FRAME 15 78 209 90 65
+FRAME 16 190 227 70 45
+FRAME 17 305 241 85 65
+FRAME 18 405 236 55 85
+FRAME 19 526 236 120 90
+// Now the freeze:
+FRAME 20 43 29 30 55
+
+// Now the caught paddle image:
+
+FRAME 21 588 451 35 60
+
+// Now the two spin images:
+
+FRAME 22 479 318 30 55 
+FRAME 23 508 317 30 55
+
+// Block:
+SEQUENCE 0 3 0 1 R
+// Unblock:
+SEQUENCE 1 2 0 D
+// Kick:
+SEQUENCE 2 4 4 5 4 D
+// Punch:
+SEQUENCE 3 4 2 3 2 D
+// Up uppercut:
+SEQUENCE 4 10 6 7 8 9 10 9 8 7 6 D
+// Down uppercut:
+SEQUENCE 5 10 15 16 17 18 19 18 17 16 15 D
+// Sweep kick:
+SEQUENCE 6 12 11 11 12 12 13 13 14 14 13 12 11 D
+// Freeze:
+SEQUENCE 7 2 20 B
+// Catch:
+SEQUENCE 11 2 21 R
+// Spin:
+SEQUENCE 15 3 22 23 B
+
+
+TYPEID 26 14 0 0
+
+DEFAULTFRAME 556 21 60 20
+
+

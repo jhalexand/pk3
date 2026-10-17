@@ -1,0 +1,12 @@
+.MAKE_VERSION:	VERSION-1.0
+HashTable.o:
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c HashTable.C
+install:
+	/cs/src/pk3/bin/bin_install 
+	/cs/src/pk3/lib/lib_install libds.a
+	cp -f HashTable.h Array.h /cs/src/pk3/include
+libds.a:
+	ar -r libds.a HashTable.o
+.BUILT_LAST_MAKE_RUN:
+depend:
+	makedepend -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include HashTable.C

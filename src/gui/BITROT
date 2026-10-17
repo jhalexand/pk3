@@ -1,0 +1,3 @@
+PKPlayerPanel::computerize is never defined (it seems to have been moved
+to PKInfoColumn).  -- bh Sat Feb 20 12:42:00 EST 1999
+.

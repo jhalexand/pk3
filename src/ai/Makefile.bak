@@ -1,0 +1,61 @@
+.SUFFIXES: .C .h
+
+PKTARGETS =
+PKMODULE = ai
+PKBAKFILES= *.C *.h Makefile # and readme
+PKBINFILES= pkaiclient
+PKLIBFILES=
+PKINCFILES=
+PKTOCLEAN =
+PKSRCFILES = PKAIClient.C PKAIClientMain.C
+
+include /cs/src/pk3/include/Makefile.pk3
+
+EXEC	= pkaiclient
+OFILES	= $(PKSRCFILES:%.C=%.o)
+
+LIBS	= -lpkclientnetwork \
+	-lnetstream -lobjectsocket -ldebug -lds \
+	-lsocket -lnsl -lXt -libmil
+
+pkaiclient: $(OFILES)
+	$(PKCC_WFLAGS) -o $@ $(OFILES) $(LIBS) 
+	@echo "make finished at " `date`
+
+
+# DO NOT DELETE
+
+PKAIClient.o: PKAIClient.h /usr/include/Xm/Xm.h /usr/include/X11/Intrinsic.h
+PKAIClient.o: /usr/include/X11/Xlib.h /usr/include/sys/types.h
+PKAIClient.o: /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h
+PKAIClient.o: /usr/include/sys/machtypes.h /usr/include/sys/int_types.h
+PKAIClient.o: /usr/include/sys/select.h /usr/include/sys/time.h
+PKAIClient.o: /usr/include/sys/time.h /usr/include/X11/X.h
+PKAIClient.o: /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h
+PKAIClient.o: /usr/include/stddef.h /usr/include/X11/Xutil.h
+PKAIClient.o: /usr/include/X11/Xresource.h /usr/include/string.h
+PKAIClient.o: /usr/include/X11/Core.h /usr/include/X11/Composite.h
+PKAIClient.o: /usr/include/X11/Constraint.h /usr/include/X11/Object.h
+PKAIClient.o: /usr/include/X11/RectObj.h /usr/include/X11/Shell.h
+PKAIClient.o: /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h
+PKAIClient.o: /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h
+PKAIClient.o: /usr/include/X11/Xatom.h /usr/include/Xm/XmStrDefs.h
+PKAIClient.o: /usr/include/X11/StringDefs.h /usr/include/Xm/VirtKeys.h
+PKAIClient.o: /usr/include/Xm/VendorS.h
+PKAIClientMain.o: PKAIClient.h /usr/include/Xm/Xm.h
+PKAIClientMain.o: /usr/include/X11/Intrinsic.h /usr/include/X11/Xlib.h
+PKAIClientMain.o: /usr/include/sys/types.h /usr/include/sys/feature_tests.h
+PKAIClientMain.o: /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h
+PKAIClientMain.o: /usr/include/sys/int_types.h /usr/include/sys/select.h
+PKAIClientMain.o: /usr/include/sys/time.h /usr/include/sys/time.h
+PKAIClientMain.o: /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h
+PKAIClientMain.o: /usr/include/X11/Xosdefs.h /usr/include/stddef.h
+PKAIClientMain.o: /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h
+PKAIClientMain.o: /usr/include/string.h /usr/include/X11/Core.h
+PKAIClientMain.o: /usr/include/X11/Composite.h /usr/include/X11/Constraint.h
+PKAIClientMain.o: /usr/include/X11/Object.h /usr/include/X11/RectObj.h
+PKAIClientMain.o: /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h
+PKAIClientMain.o: /usr/include/X11/SM/SM.h /usr/include/X11/ICE/ICElib.h
+PKAIClientMain.o: /usr/include/X11/ICE/ICE.h /usr/include/X11/Xatom.h
+PKAIClientMain.o: /usr/include/Xm/XmStrDefs.h /usr/include/X11/StringDefs.h
+PKAIClientMain.o: /usr/include/Xm/VirtKeys.h /usr/include/Xm/VendorS.h

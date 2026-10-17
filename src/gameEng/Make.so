@@ -1,0 +1,55 @@
+#
+#     NAME: Makefile
+#   AUTHOR: Elaine Chen (eyc)
+#    DESCR: Makefile for creating a shared object library
+#
+
+
+#//////////////////////////////////////////////////////////////////////
+
+SOLIBNAME	= pkgameengine
+SOLIBRARY	= lib$(SOLIBNAME).so
+
+.SUFFIXES: .cxx .h
+
+SOLIBOBJ	= PKGameEngineInterface.o PKGameEngine.o GEGameObject.o \
+GEPlayer.o GEProjectile.o GEBall.o GEContainer.o GEEvent.o GEWall.o \
+GEInjureTeamEvent.o GELKLeftPlayer.o GELKRightPlayer.o \
+GERemoveObjectEvent.o GEExplosionProjectile.o GESZLeftPlayer.o \
+GESZProjectile.o GERepRightPlayer.o GEJadeLeftPlayer.o \
+GECyraxLeftPlayer.o GECyraxBomb.o GECyraxNet.o GEKabalRightPlayer.o \
+GEJadeRightPlayer.o GERepLeftPlayer.o GEKabalLeftPlayer.o \
+GECyraxRightPlayer.o GESZRightPlayer.o PKRoundEngine.o
+
+#ready to be added to list
+#GECyraxLeftPlayer.o GECyraxRightPlayer.o
+#GECyraxNet.o GECyraxBomb.o GECyraxHalfScreenBomb.o
+
+
+#//////////////////////////////////////////////////////////////////////
+
+SHELL	= /bin/sh
+LD		= ld
+CXX		= /opt/SUNWspro/bin/CC
+AR		= /usr/ccs/bin/ar ruc
+RM		= /bin/rm -rf
+
+PKBASE	= /cs/src/pk3
+IFLAGS    = -I$(PKBASE)/include -I.
+LIBFLAGS  = -L$(PKBASE)/lib -L/cs/lib -L/course/cs032
+LIBFILES  = -lrwtool -lpkgameserver -lpkphysics
+RUNFLAGS  = -R$(PKBASE)/lib -R. -R/course/cs032
+LDFLAGS   = -G -o
+CXXFLAGS  = -g
+
+all: $(SOLIBRARY)
+
+$(SOLIBRARY): $(SOLIBOBJ) 
+	$(LD) $(LDFLAGS) $(SOLIBRARY) $(SOLIBOBJ) Templates.DB/*.o 
+#	$(LIBFLAGS) $(LIBFILES) $(RUNFLAGS)
+
+.cxx.o:
+	$(CXX) $(CXXFLAGS) $(IFLAGS) -c $<
+
+clean:
+	$(RM) *.o Templates.DB core

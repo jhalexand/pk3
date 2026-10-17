@@ -1,0 +1,28 @@
+Pong Kombat 3
+-------------
+
+This game is a duplication of the original game of Pong Kombat 3.  It
+is a super-hyped variation on the orginal and very simple game of
+pong, where two players each can move a paddle around, and try to
+bounce a ball back and forth between them.  It plays off the
+one-on-one fighting arcade game of Mortal Kombat and uses many of the
+characters and motifs first seen there.
+
+In Pong Kombat 3, each player chooses a paddle, where each paddle has
+a different character and different abilities associated with it.  The
+object of the game is to eliminate all of one's opponents by either
+bouncing the ball past one's opponents, or simply by going up to them
+and fighting it out one-on-one, and utilizing the paddle's special
+capabilities.
+
+
+This Version
+------------
+This version of Pong Kombat 3 is networked and can have 1 to 4 players
+battling on 2 teams.  There are 6 different paddles/players to choose
+from, each with their own special abilities.
+
+Upcoming Features
+-----------------
+Upcoming features include being able to fight against paddles with
+Artificial Intelligence.

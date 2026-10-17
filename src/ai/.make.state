@@ -1,0 +1,28 @@
+.MAKE_VERSION:	VERSION-1.0
+pkaiclient:	/usr/include/time.h /usr/include/sys/va_list.h /usr/include/sys/types.h /usr/include/sys/time.h /usr/include/sys/siginfo.h /usr/include/sys/select.h /usr/include/sys/machtypes.h /usr/include/sys/machsig.h /usr/include/sys/isa_defs.h /usr/include/sys/int_types.h /usr/include/sys/ieeefp.h /usr/include/sys/feature_tests.h /usr/include/string.h /usr/include/stdlib.h /usr/include/stdio.h /usr/include/stddef.h /usr/include/math.h /usr/include/floatingpoint.h
+pkaiclient:	/usr/include/assert.h /usr/include/X11/Xutil.h /usr/include/X11/Xresource.h /usr/include/X11/Xosdefs.h /usr/include/X11/Xlib.h /usr/include/X11/Xfuncproto.h /usr/include/X11/Xatom.h /usr/include/X11/X.h /usr/include/X11/StringDefs.h /usr/include/X11/Shell.h /usr/include/X11/SM/SMlib.h /usr/include/X11/SM/SM.h /usr/include/X11/RectObj.h /usr/include/X11/Object.h /usr/include/X11/Intrinsic.h /usr/include/X11/ICE/ICElib.h /usr/include/X11/ICE/ICE.h /usr/include/X11/Core.h
+pkaiclient:	/usr/include/X11/Constraint.h /usr/include/X11/Composite.h /usr/dt/include/Xm/XmStrDefs.h /usr/dt/include/Xm/Xm.h /usr/dt/include/Xm/VirtKeys.h /usr/dt/include/Xm/VendorS.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /godzilla/cs0/pk3/src/ai/PKAIClient.h /cs/src/pk3/include/debug.h /cs/src/pk3/include/VectorMath.h /cs/src/pk3/include/PKids.h /cs/src/pk3/include/PKObject.h /cs/src/pk3/include/PKKey.h /cs/src/pk3/include/PKGameClasses.h
+pkaiclient:	/cs/src/pk3/include/PKClientObject.h /cs/src/pk3/include/PKClientNetworkInterface.h /cs/src/pk3/include/PKClientInterface.h /cs/src/pk3/include/HashTable.h /cs/src/pk3/include/Array.h /cs/src/pk3/lib/libpkclientnetwork.so /cs/src/pk3/lib/libnetstream.so /cs/src/pk3/lib/libobjectsocket.so /cs/src/pk3/lib/libdebug.so /cs/src/pk3/lib/libds.a /usr/lib/libsocket.so /usr/lib/libnsl.so /usr/lib/libXt.so /opt/SUNWspro/lib/libm.so /opt/SUNWspro/lib/libC.so
+pkaiclient:	/opt/SUNWspro/SC4.2/lib/libC_mtstubs.a /usr/lib/libw.so /opt/SUNWspro/SC4.2/lib/libcx.a /usr/lib/libc.so /usr/lib/libdl.so.1 /usr/lib/libc.so.1 /usr/lib/libw.so.1 /usr/lib/libICE.so.6 /usr/lib/libnsl.so.1 /usr/lib/libsocket.so.1 /usr/lib/libSM.so.6 /usr/lib/libX11.so.4 /usr/lib/libXext.so.0 /usr/lib/libmp.so.2 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -L/cs/src/pk3/lib -L/usr/dt/lib -L/cs/lib -R/cs/src/pk3/lib -R/usr/dt/lib -R/cs/lib -o pkaiclient PKAIClient.o PKAIClientMain.o -lpkclientnetwork  -lnetstream -lobjectsocket -ldebug -lds  -lsocket -lnsl -lXt -libmil 
+	echo "make finished at " `date`
+tidy:
+	rm -f *~
+install:
+	/cs/src/pk3/bin/bin_install pkaiclient
+	/cs/src/pk3/lib/lib_install 
+PKAIClient.o:	/opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKAIClient.C
+PKAIClient.C:
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKAIClient.h
+.BUILT_LAST_MAKE_RUN:
+clean:
+	/usr/bin/rm -rf *.o core a.out Templates.DB ir.out \
+		 pkaiclient 
+depend:
+	makedepend -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include PKAIClient.C PKAIClientMain.C
+PKAIClientMain.o:	/opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/floatingpoint.h /usr/include/sys/ieeefp.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKAIClientMain.C
+backup:
+	gtar czvf /cs/src/pk3/src/backups/ai/"`date '+%d%m%y_%H%M%S'`.tar.gz" \
+		*.C *.h Makefile

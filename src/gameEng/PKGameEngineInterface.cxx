@@ -1,0 +1,80 @@
+/*************************************************************************
+ *    NAME: Elaine Chen
+ *    USER: eyc
+ *    FILE: PKGameEngineInterface.cxx
+ *    DATE: Thu Apr 24 21:36:44 US/Eastern 1997
+ *************************************************************************/
+#include <PKGameEngineInterface.h>
+#include "PKGameEngine.h"
+#include "PKRoundEngine.h"
+
+#include <iostream.h>
+
+/*************************************************************************
+ * Function Name: PKGameEngineInterface::PKGameEngineInterface
+ * Parameters: PKGameServerInterface* server, int numplayers, PKTypeID
+players[], PKKombatKodeID kode
+ * Effects: 
+ *************************************************************************/
+
+PKGameEngineInterface::PKGameEngineInterface(PKGameServerInterface* server,
+									int numplayers,
+									PKTypeID players[],
+
+PKKombatKodeID kode)
+{
+    _roundEngine = new PKRoundEngine(server, numplayers, players, kode);
+}
+
+
+/*************************************************************************
+ * Function Name: PKGameEngineInterface::~PKGameEngineInterface
+ * Parameters: 
+ * Effects: 
+ *************************************************************************/
+
+PKGameEngineInterface::~PKGameEngineInterface()
+{
+    delete _roundEngine;
+}
+
+
+/*************************************************************************
+ * Function Name: PKGameEngineInterface::mainloop
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKGameEngineInterface::mainloop()
+{
+    _roundEngine->mainloop();
+}
+
+
+/*************************************************************************
+ * Function Name: PKGameEngineInterface::handleAction
+ * Parameters: int id, PKActionID action
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKGameEngineInterface::handleAction(int id, PKActionID action)
+{
+    _roundEngine->handleAction(id, action);
+}
+
+
+/*************************************************************************
+ * Function Name: PKGameEngineInterface::handleHangup
+ * Parameters: int playerNum
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKGameEngineInterface::handleHangup(int playerNum)
+{
+  fprintf (stderr, "Unimplimented: handleHangup() in game engine.\n");
+  // _roundEngine->handleHangup(playerNum);
+}
+

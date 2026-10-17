@@ -1,0 +1,32 @@
+.MAKE_VERSION:	VERSION-1.0
+.BUILT_LAST_MAKE_RUN:
+PKAudioClass.o:	PKAudioClass.h /cs/include/rplay.h /usr/include/sys/types.h /usr/include/sys/feature_tests.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/sys/netconfig.h /usr/include/netinet/in.h /usr/include/sys/stream.h /usr/include/sys/vnode.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioClass.o:	/usr/include/sys/t_lock.h /usr/include/sys/machlock.h /usr/include/sys/sleepq.h /usr/include/sys/turnstile.h /usr/include/sys/param.h /usr/include/sys/unistd.h /usr/include/sys/pirec.h /usr/include/sys/mutex.h /usr/include/sys/rwlock.h /usr/include/sys/semaphore.h /usr/include/sys/condvar.h /usr/include/sys/cred.h /usr/include/sys/resource.h /usr/include/vm/seg_enum.h /usr/include/sys/poll.h /usr/include/sys/strmdep.h /usr/include/sys/model.h /usr/include/sys/byteorder.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioClass.o:	/usr/include/stdio.h /usr/include/sys/va_list.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/assert.h /usr/include/fcntl.h /usr/include/sys/fcntl.h /usr/include/stdlib.h /usr/include/sys/mman.h /usr/include/sys/stat.h /usr/include/unistd.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKAudioClass.C
+.BUILT_LAST_MAKE_RUN:
+install:
+	/cs/src/pk3/bin/bin_install 
+	/cs/src/pk3/lib/lib_install libpkaudio.so
+.BUILT_LAST_MAKE_RUN:
+PKAudioPlayer.o:	PKAudioPlayer.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tvhdict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/compiler.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/xvhdict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tvsldict.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tislist.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/islist.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tooldefs.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/defs.h /usr/include/stddef.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/generic.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioPlayer.o:	/opt/SUNWspro/SC4.2/include/CC/generic.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/mempool.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tasslnk.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/tpvector.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/pvector.h /opt/SUNWspro/SC4.2/include/CC/rw7/rw/edefs.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/va_list.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioPlayer.o:	/usr/include/assert.h /cs/src/pk3/include/PKids.h PKAudioClass.h /cs/include/rplay.h /usr/include/sys/types.h /usr/include/sys/isa_defs.h /usr/include/sys/machtypes.h /usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/sys/netconfig.h /usr/include/netinet/in.h /usr/include/sys/stream.h /usr/include/sys/vnode.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioPlayer.o:	/usr/include/sys/t_lock.h /usr/include/sys/machlock.h /usr/include/sys/sleepq.h /usr/include/sys/turnstile.h /usr/include/sys/param.h /usr/include/sys/unistd.h /usr/include/sys/pirec.h /usr/include/sys/mutex.h /usr/include/sys/rwlock.h /usr/include/sys/semaphore.h /usr/include/sys/condvar.h /usr/include/sys/cred.h /usr/include/sys/resource.h /usr/include/vm/seg_enum.h /usr/include/sys/poll.h /usr/include/sys/strmdep.h /usr/include/sys/model.h /usr/include/sys/byteorder.h
+.BUILT_LAST_MAKE_RUN:
+PKAudioPlayer.o:	/usr/include/stdlib.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKAudioPlayer.C
+clean:
+	/usr/bin/rm -rf *.o core a.out Templates.DB ir.out \
+		  libpkaudio.so
+.BUILT_LAST_MAKE_RUN:
+libpkaudio.so:
+	ld -G -o libpkaudio.so PKAudioClass.o PKAudioPlayer.o Templates.DB/*.o
+backup:
+	gtar czvf /cs/src/pk3/src/backups/audio/"`date '+%d%m%y_%H%M%S'`.tar.gz" \
+		*.C *.h Makefile

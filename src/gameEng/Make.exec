@@ -1,0 +1,44 @@
+#
+#   FILE: Makefile
+# AUTHOR: Elaine Chen (eyc)
+#  DESCR: Makefile for the Pongbat game engine
+#
+
+EXEC = eng
+SRCS = main.cxx PKGameEngineInterface.cxx PKGameEngine.cxx \
+GEGameObject.cxx  GEPlayer.cxx GEProjectile.cxx GEBall.cxx \
+GEContainer.cxx GEEvent.cxx GEWall.cxx GEInjureTeamEvent.cxx \
+GELKLeftPlayer.cxx GELKRightPlayer.cxx GERemoveObjectEvent.cxx \
+GEJadeLeftPlayer.cxx GEJadeRightPlayer.cxx GEExplosionProjectile.cxx \
+GECyraxLeftPlayer.cxx GECyraxNet.cxx GECyraxBomb.cxx \
+GECyraxHalfScreenBomb.cxx GERepRightPlayer.cxx GECyraxRightPlayer.cxx
+
+
+
+#.KEEP_STATE:
+.SUFFIXES: .cxx .h
+
+SHELL = /bin/sh
+
+CC = /opt/SUNWspro/bin/CC
+RM = /bin/rm -rf
+
+CFLAGS =  -g
+IFLAGS =  -I/u/pongbat/include -I.
+
+LDFLAGS = -L/u/pongbat/lib -L/opt/SUNWspro/SC4.0/lib
+LIBS    = -lrwtool -lpkgameserver -lpkgameengine -lpkphysics
+RFLAGS  = -R/u/pongbat/lib -R.
+
+OBJS = $(SRCS:%.cxx=%.o)
+
+all: $(EXEC)
+
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS) $(LDFLAGS) $(RFLAGS)
+
+.cxx.o:
+	$(CC) $(CFLAGS) $(IFLAGS) -c $<
+
+clean:
+	$(RM) $(EXEC) $(OBJS) core

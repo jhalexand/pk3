@@ -1,0 +1,25 @@
+PRJHOME=/cs/src/pk3
+
+OBJECTS=PKAudioClass.o PKAudioPlayer.o
+INCLUDES=-I$(PRJHOME)/include -I/cs/include
+BACKUPDIR=$(PRJHOME)/src/backups/audio
+DEFINES=-DDEBUG
+CCC=CC -g -c -pic
+
+
+libpkaudio.so: $(OBJECTS)
+	$(LD) -G -o $@ $(OBJECTS) Templates.DB/*.o
+
+%.o:%.C
+	$(CCC) $(INCLUDES) $(DEFINES) $<
+
+install: libpkaudio.so
+	$(PRJHOME)/lib/lib_install libpkaudio.so
+
+backup:
+	gtar czvf $(BACKUPDIR)/"`date +%d%m%y_%H%M%S`.tgz" \
+		*.C *.h Makefile
+
+
+clean:
+	rm -rf *.o a.out core libpkaudio.so Templates.DB

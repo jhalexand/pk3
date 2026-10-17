@@ -1,0 +1,8 @@
+Flow of control:
+
+	main.C: includes mainline
+		simply instantiates a PKClient, then returns
+
+
+	PKCilent.C: initializes a bunch of stuff, then calls XtAppMainLoop
+	-- first: 

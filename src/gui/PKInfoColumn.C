@@ -1,0 +1,297 @@
+/*************************************************************************
+ *    NAME: Benoit Hudson
+ *    USER: bh
+ *    FILE: PKInfoColumn.C
+ *    DATE: Wed Oct  8  2:46:34 US/Eastern 1997
+ *************************************************************************/
+#include "PKInfoColumn.h"
+
+#include <debug.h>
+
+// X and motif includes
+#include <Xm/Label.h>
+#include <Xm/PushB.h>
+#include <Xm/RowColumn.h>
+#include <Xm/ToggleB.h>
+#include <Xm/Xm.h>
+
+// project-wide includes
+#include <PKClientNetworkInterface.h>
+#include <PKGameClasses.h>
+#include <PKids.h>
+
+// GUI-specific includes
+#include "PKPlayerPanel.h"
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::PKInfoColumn
+ * Parameters: Widget parent, PKPlayerPanel *panel, const char *name, const char *host, const char *acct
+ * Effects: 
+ *************************************************************************/
+
+PKInfoColumn::PKInfoColumn(Widget parent, PKPlayerPanel *panel,
+			   PKClientNetworkInterface *network,
+			   int playerNumber,
+			   const char *name,
+			   const char *acct,
+			   const char *host)
+
+{
+  panel_ = panel ;
+  network_ = network ;
+  playerNumber_ = playerNumber ;
+
+  
+
+  column_ = XtVaCreateManagedWidget("infocol", xmRowColumnWidgetClass, parent,
+				    XmNorientation, XmVERTICAL,
+				    NULL);
+
+  XmString Xstr = XmStringCreateSimple("");
+  name_ = XtVaCreateManagedWidget("name", xmLabelWidgetClass, column_,
+				  XmNlabelString, Xstr,
+				  NULL);
+  info_ = XtVaCreateManagedWidget("info", xmLabelWidgetClass, column_,
+				  XmNlabelString, Xstr,
+				  NULL);
+  XmStringFree(Xstr);
+
+  // add the team toggles
+  teamToggle_[0] = XtVaCreateManagedWidget("Team 1", xmToggleButtonWidgetClass,
+					   column_,
+					   XmNindicatorType, XmONE_OF_MANY,
+					   NULL);
+
+  teamToggle_[1] = XtVaCreateManagedWidget("Team 2", xmToggleButtonWidgetClass,
+					   column_,
+					   XmNindicatorType, XmONE_OF_MANY,
+					   NULL);
+
+  // add the computerize button
+  computerize_ = XtVaCreateManagedWidget("Computerize", xmPushButtonWidgetClass,
+					  column_,
+					  XmNindicatorOn, True,
+					  NULL);
+
+  // add the reject button
+  reject_ = XtVaCreateManagedWidget("Reject", xmPushButtonWidgetClass,
+				    column_,
+				    XmNindicatorOn, True,
+				    NULL);
+
+  // add all the callbacks
+  XtAddCallback(reject_, XmNactivateCallback,
+		PKInfoColumn::static_reject, (XtPointer) this);
+  XtAddCallback(computerize_, XmNactivateCallback,
+		PKInfoColumn::static_computerize, (XtPointer) this);  
+  XtAddCallback(teamToggle_[0], XmNvalueChangedCallback,
+		PKInfoColumn::static_team1, (XtPointer) this);
+  XtAddCallback(teamToggle_[1], XmNvalueChangedCallback,
+		PKInfoColumn::static_team2, (XtPointer) this);
+
+
+  // all done now
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::realize
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::realize()
+{
+  dprintf(("PKInfoColumn: realizing\n"));
+  dprintf(("PKInfoColumn: done realizing\n"));
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::~PKInfoColumn
+ * Parameters: 
+ * Effects: 
+ *************************************************************************/
+
+PKInfoColumn::~PKInfoColumn()
+{
+  XtDestroyWidget(column_);
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::setTeam
+ * Parameters: int teamnum
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::setTeam(int teamnum) 
+{
+  teamnum--;
+  if (teamnum) {
+    XmToggleButtonSetState(teamToggle_[1], True, False);
+    XmToggleButtonSetState(teamToggle_[0], False, False);
+  } else {
+    XmToggleButtonSetState(teamToggle_[0], True, False);
+    XmToggleButtonSetState(teamToggle_[1], False, False);
+  }
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::addPlayer
+ * Parameters: const PKPlayerInfo& player
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::addPlayer(const PKPlayerInfo& player)
+{
+  XmString Xstr ;
+  char buf[STRLEN];
+
+  sprintf(buf, "%.16s", player.username());
+  Xstr = XmStringCreateSimple(buf);
+  XtVaSetValues(name_, XmNlabelString, Xstr, NULL);
+  XmStringFree(Xstr);
+    
+  sprintf(buf, "%.8s@%.7s", player.account(), player.hostname());
+  Xstr = XmStringCreateSimple(buf);
+  XtVaSetValues(info_, XmNlabelString, Xstr, NULL);
+  XmStringFree(Xstr);
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::addAI
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::addAI()
+{
+  network_->addAIPlayer(playerNumber_, PK_AI_DUMB);
+/*  PKPlayerInfo tp;
+  tp.setUsername("dumb ai player");
+  tp.setAccount("someone");
+  tp.setHostname("somewhere");*/
+  XtSetSensitive(teamToggle_[0], True);
+  XtSetSensitive(teamToggle_[1], True);
+  panel_->showSelect();
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::removePlayer
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::removePlayer()
+{
+  XmString Xstr = XmStringCreateSimple(" ");
+  XtVaSetValues(name_, XmNlabelString, Xstr, NULL);
+  XtVaSetValues(info_, XmNlabelString, Xstr, NULL);
+  XmStringFree(Xstr);
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::hideCreatorButtons
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::hideCreatorButtons()
+{
+  XtUnmapWidget(reject_);
+  XtUnmapWidget(computerize_);
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::desensitizeToggles
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::desensitizeToggles()
+{
+  dprintf(("PKInfoColumn: desensitizing toggles\n"));
+  XtSetSensitive(teamToggle_[0], False);
+  XtSetSensitive(teamToggle_[1], False);
+  dprintf(("PKInfoColumn: done desensitizing toggles\n"));
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::computerize
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::computerize()
+{
+  addAI();
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::reject
+ * Parameters: 
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::reject()
+{
+  network_->rejectPlayer(playerNumber_);
+}
+
+
+/*************************************************************************
+ * Function Name: PKInfoColumn::teamToggle
+ * Parameters: int teamnumber
+ * Returns: void
+ * Effects: 
+ *************************************************************************/
+void
+PKInfoColumn::teamToggle(int teamnum)
+{
+  // the toggle button will be already set correctly, but make sure
+  // it's right
+  if (XmToggleButtonGetState(teamToggle_[teamnum-1])) {
+    XmToggleButtonSetState(teamToggle_[teamnum-1], True, False);
+    XmToggleButtonSetState(teamToggle_[1-(teamnum-1)], False, False);
+    network_->setTeam(playerNumber_, teamnum);
+  } else {
+    XmToggleButtonSetState(teamToggle_[teamnum-1], False, False);
+    XmToggleButtonSetState(teamToggle_[1-(teamnum-1)], True, False);
+    network_->setTeam(playerNumber_, teamnum);
+  }
+}
+
+void
+PKInfoColumn::teamTo1()
+{
+  XmToggleButtonSetState(teamToggle_[0], True, False);
+  XmToggleButtonSetState(teamToggle_[1], False, False);
+  network_->setTeam(playerNumber_, 1);
+}
+  
+void
+PKInfoColumn::teamTo2()
+{
+  XmToggleButtonSetState(teamToggle_[1], True, False);
+  XmToggleButtonSetState(teamToggle_[0], False, False);
+  network_->setTeam(playerNumber_, 2);
+}
+  

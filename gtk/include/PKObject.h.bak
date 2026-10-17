@@ -1,0 +1,46 @@
+/*************************************************************************/
+/*    NAME: Elaine Chen                                                  */
+/*    ACCT: eyc                                                          */
+/*    FILE: PKObject.h                                                   */
+/*    DATE: Tue Apr 22 18:27:14 1997                                     */
+/*************************************************************************/
+
+
+#ifndef PKOBJECT_HEADER
+#define PKOBJECT_HEADER
+
+#include <VectorMath.h>
+#include <PKids.h>
+
+class PKObject {
+public:
+    PKObject(int uniqueID, PKTypeID typeID, PKPoint* pos) {
+	   _typeID = typeID; _ID = uniqueID; _pos = pos;}
+    virtual ~PKObject() {
+	   delete _pos;}
+    
+    //mutators
+    void setPosition(PKPoint* newpos) {
+	   delete _pos; _pos = newpos;}
+    void setVector (PKVector* vect) {
+	   delete _vector; _vector = vect;}
+
+    //accessors
+    PKPoint* getPosition() {
+	   return _pos;}
+    PKVector* getVector() {
+	   return _vector;}
+    PKTypeID getTypeID() {
+	   return _typeID;}
+    int getUniqueID() {
+	   return _ID;}
+
+protected:
+    int _ID;
+    PKTypeID _typeID;
+    PKPoint* _pos;
+    PKVector* _vector;
+
+};
+
+#endif

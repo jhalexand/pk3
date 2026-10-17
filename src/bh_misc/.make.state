@@ -1,0 +1,21 @@
+.MAKE_VERSION:	VERSION-1.0
+install:
+	/cs/src/pk3/bin/bin_install 
+	/cs/src/pk3/lib/lib_install libdebug.so libpkresources.so
+	cp -f PKGameClasses.h PKResources.h /cs/src/pk3/include
+clean:
+	/usr/bin/rm -rf *.o core a.out Templates.DB ir.out \
+		  libdebug.so libpkresources.so
+PKResources.o:	PKResources.h /cs/src/pk3/include/debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/va_list.h /usr/include/assert.h /cs/src/pk3/include/PKids.h /usr/include/ctype.h /usr/include/errno.h /usr/include/sys/errno.h /usr/include/limits.h /usr/include/sys/isa_defs.h /usr/include/sys/int_limits.h /usr/include/pwd.h /usr/include/sys/types.h /usr/include/sys/machtypes.h
+PKResources.o:	/usr/include/sys/int_types.h /usr/include/sys/select.h /usr/include/sys/time.h /usr/include/time.h /usr/include/sys/siginfo.h /usr/include/sys/machsig.h /usr/include/stdlib.h /usr/include/string.h /usr/include/unistd.h /usr/include/sys/unistd.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c PKResources.C
+debug.o:	debug.h /opt/SUNWspro/SC4.2/include/CC/iostream.h /opt/SUNWspro/SC4.2/include/CC/rlocks.h /usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/va_list.h /usr/include/assert.h 
+	/opt/SUNWspro/bin/CC -g -DDEBUG -I/cs/src/pk3/include -I/usr/include/X11 -I/usr/dt/include -I/cs/include -c debug.C
+.BUILT_LAST_MAKE_RUN:
+backup:
+	gtar czvf /cs/src/pk3/src/backups/bh_misc/"`date '+%d%m%y_%H%M%S'`.tar.gz" \
+		*.C *.h Makefile
+libpkresources.so:
+	ld -G -o libpkresources.so PKResources.o
+libdebug.so:
+	ld -G -o libdebug.so debug.o
