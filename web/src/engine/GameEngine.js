@@ -38,9 +38,19 @@ export class GameEngine {
     if (serve) this.serveBall();
   }
 
+  // Change: the original served right and down from the middle, out of the
+  // right paddle's reach. Serve right and up from below the middle instead,
+  // aimed so the ball meets the centre of a paddle that hasn't moved.
   serveBall() {
+    const vector = { x: 1 * DIM.BALL_SPEED, y: -0.33 * DIM.BALL_SPEED };
     const ballPos = { x: Math.trunc(DIM.SCREEN_WIDTH / 3), y: (DIM.SCREEN_HEIGHT - DIM.WALL_TOP_Y) / 2 + DIM.WALL_TOP_Y };
-    this.addObject(new Ball(this, ballPos, { x: 1 * DIM.BALL_SPEED, y: 0.33 * DIM.BALL_SPEED }));
+    const target = this.team2[0];
+    if (target) {
+      // Ball centre x when the ball first touches the paddle's front face.
+      const hitX = target.pos.x - Math.trunc(target.width / 2) - DIM.BALL_WIDTH / 2;
+      ballPos.y = target.pos.y - (vector.y / vector.x) * (hitX - ballPos.x);
+    }
+    this.addObject(new Ball(this, ballPos, vector));
   }
 
   // One pass of PKGameEngine::mainloop. Returns the winning team (1 or 2), or 0.
