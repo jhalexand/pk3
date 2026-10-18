@@ -9,7 +9,7 @@
 //   {t:'pause', paused, quiet}  (quiet: freeze without showing the pause screen)
 
 import { GameEngine } from './GameEngine.js';
-import { SND } from './ids.js';
+import { SND, A } from './ids.js';
 
 export const TICK_MS = 20;
 const NS = 1e6; // ns per ms
@@ -29,6 +29,7 @@ export class RoundEngine {
     this.cues = [];
     this.lastSync = 0;
     this.winner = 0;
+    this.pauseAtPlay = false; // a pause asked for before play began
   }
 
   ms() { return this.clock() / NS; }
@@ -54,6 +55,10 @@ export class RoundEngine {
       // The ball only appears now, so it doesn't fly around during the intro.
       this.engine.serveBall();
       this.setPhase('play');
+      if (this.pauseAtPlay) {
+        this.pauseAtPlay = false;
+        this.engine.setPaused(true);
+      }
     });
   }
 
@@ -99,6 +104,8 @@ export class RoundEngine {
 
   handleAction(playerNum, action) {
     if (this.phase === 'play') this.engine.handleAction(playerNum, action);
+    // A pause during the round intro or between rounds takes effect on "Fight!".
+    else if (action === A.PAUSE || action === A.UNPAUSE) this.pauseAtPlay = action === A.PAUSE;
   }
 
   stop() {
