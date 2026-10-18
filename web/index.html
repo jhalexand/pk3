@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pong Kombat 3</title>
+<link rel="icon" href="assets/gfx/paddles/startup/Sub Zero.png">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.4/peerjs.min.js"></script>
+</head>
+<body>
+<main id="desk">
+
+  <!-- 1. Opening screen (PKOpeningGUI) -->
+  <section class="window" id="screen-opening" hidden>
+    <div class="titlebar">Pong Kombat 3</div>
+    <div class="opening">
+      <div class="title-art"><img src="assets/gfx/misc/pk3title-large.png" alt="PK3 — Pong Kombat 3"></div>
+      <div class="opening-buttons">
+        <div class="spacer"></div>
+        <button class="img-btn" id="btn-single"><img src="assets/gfx/buttons/single.png" alt="Single player"></button>
+        <button class="img-btn" id="btn-multi"><img src="assets/gfx/buttons/multi.png" alt="Multiplayer"></button>
+        <button class="img-btn" id="btn-quit"><img src="assets/gfx/buttons/quit.png" alt="Quit"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Konnect screen (PKKonnectGUI): pairing replaces host/port -->
+  <section class="window narrow" id="screen-konnect" hidden>
+    <div class="titlebar">Konnect!</div>
+    <div class="motif konnect">
+      <img class="konnect-art" src="assets/gfx/misc/konnect.png" alt="Konnect">
+      <label class="field">User Name
+        <input id="konnect-name" maxlength="16" autocomplete="nickname" spellcheck="false">
+      </label>
+      <div class="etched">
+        <h2>Start a new game</h2>
+        <p>You'll get a code to give your opponent.</p>
+        <button class="img-btn small" id="btn-create"><img src="assets/gfx/buttons/create.png" alt="Create"></button>
+      </div>
+      <div class="etched">
+        <h2>Join a game</h2>
+        <label class="field">Game code
+          <input id="konnect-code" maxlength="8" autocomplete="off" spellcheck="false" class="code-input" placeholder="ABCDE">
+        </label>
+        <button class="img-btn small" id="btn-join"><img src="assets/gfx/buttons/join.png" alt="Join"></button>
+      </div>
+      <p class="status" id="konnect-status" role="status"></p>
+      <div class="row end"><button class="motif-btn" id="btn-konnect-back">Back</button></div>
+    </div>
+  </section>
+
+  <!-- 3. Game gathering / fighter select (PKGameGatheringGUI) -->
+  <section class="window wide" id="screen-gather" hidden>
+    <div class="titlebar">Game</div>
+    <div class="motif gather">
+      <div class="code-banner" id="code-banner" hidden>
+        Your game code: <strong id="code-text"></strong>
+        <button class="motif-btn" id="btn-copy-code">Copy</button>
+        <span class="hint" id="code-hint">Send this to your opponent. They choose Multiplayer, then Join.</span>
+      </div>
+      <div class="panels">
+        <div class="player-panel etched" data-slot="0"></div>
+        <div class="player-panel etched" data-slot="1"></div>
+        <div class="gather-buttons">
+          <button class="img-btn small" id="btn-start"><img src="assets/gfx/buttons/start.png" alt="Start"></button>
+          <button class="img-btn small" id="btn-cancel"><img src="assets/gfx/buttons/cancel.png" alt="Cancel"></button>
+          <p class="hint" id="start-hint"></p>
+        </div>
+      </div>
+      <div class="lower">
+        <div class="chat etched" id="chat-box">
+          <div class="chat-log" id="chat-log" aria-live="polite"></div>
+          <input id="chat-input" maxlength="200" placeholder="Type a message and press Enter" autocomplete="off">
+        </div>
+        <div class="moves etched">
+          <h2>Kontrols</h2>
+          <table class="keys">
+            <tr><td><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></td><td>Move</td></tr>
+            <tr><td><kbd>A</kbd></td><td>Punch</td></tr>
+            <tr><td><kbd>S</kbd></td><td>Kick</td></tr>
+            <tr><td><kbd>D</kbd></td><td>Block</td></tr>
+            <tr><td><kbd>P</kbd> / <kbd>U</kbd></td><td>Pause / Unpause</td></tr>
+            <tr><td><kbd>↑</kbd>/<kbd>↓</kbd> + Punch</td><td>Uppercut</td></tr>
+            <tr><td>Back + Kick</td><td>Sweep</td></tr>
+          </table>
+          <h2 id="moves-title">Special moves</h2>
+          <table class="keys" id="moves-list"></table>
+          <p class="hint">Arrows shown are for the left side. On the right side, swap ← and →.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4a. Versus splash (misc/vs.xpm, unused in 1997) -->
+  <section class="window" id="screen-vs" hidden>
+    <div class="titlebar">Pong Kombat</div>
+    <div class="vs">
+      <img src="assets/gfx/misc/vs.png" alt="">
+      <img class="vs-portrait left" id="vs-left" alt="">
+      <img class="vs-portrait right" id="vs-right" alt="">
+      <canvas class="vs-names" id="vs-names" width="516" height="432"></canvas>
+    </div>
+  </section>
+
+  <!-- 4b. Gameplay -->
+  <section class="window" id="screen-game" hidden>
+    <div class="titlebar">Pong Kombat</div>
+    <div class="menubar"><button class="menu" id="btn-game-quit">File ▸ Quit</button>
+      <span class="menu-hint">A punch · S kick · D block · P pause · U unpause</span>
+      <button class="menu mute" id="btn-mute" aria-pressed="false">Sound on</button></div>
+    <canvas id="game-canvas" width="516" height="432"></canvas>
+  </section>
+
+  <!-- 5. Game over (misc/gameover.xpm, unused in 1997) -->
+  <section class="window" id="screen-gameover" hidden>
+    <div class="titlebar">Game Over</div>
+    <div class="gameover">
+      <img src="assets/gfx/misc/gameover.png" alt="Game over">
+      <canvas id="gameover-text" width="400" height="40"></canvas>
+      <div class="row center"><button class="motif-btn" id="btn-continue">Continue</button></div>
+    </div>
+  </section>
+
+  <!-- Quit: credits -->
+  <section class="window narrow" id="screen-credits" hidden>
+    <div class="titlebar">Quit</div>
+    <div class="motif credits">
+      <img src="assets/gfx/misc/pk3title.png" alt="PK3">
+      <div>
+        <p><strong>Pong Kombat 3</strong> was written in 1997 as a final project for an intro to software engineering course. It ran on Solaris workstations under X and Motif.</p>
+        <p>By Dave Akers, Jeff Alexander, Elaine Chen, Benoit Hudson and Mike Pelluaer.</p>
+        <p>This version runs the original game engine, graphics and sounds in your browser.</p>
+        <div class="row end"><button class="motif-btn" id="btn-credits-back">Back</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Error dialog (PKErrorDialog) -->
+  <div class="dialog-backdrop" id="dialog" hidden>
+    <div class="window dialog" role="alertdialog" aria-labelledby="dialog-text">
+      <div class="titlebar">Error</div>
+      <div class="motif">
+        <p id="dialog-text"></p>
+        <div class="row end"><button class="motif-btn" id="dialog-ok">OK</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="module" src="src/ui/app.js"></script>
+</body>
+</html>
