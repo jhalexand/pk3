@@ -73,3 +73,12 @@ test('releasing one direction while holding the other keeps moving', () => {
   keys.keyRelease('UP');
   assert.equal(sent.at(-1), A.STOP_VERTICAL);
 });
+
+test('move lists are in order with one entry per special', async () => {
+  const { moveList } = await import('../web/src/input/PaddleKeys.js');
+  for (const type of [T.CYRAX_1, T.JADE_1, T.KABAL_1, T.LIU_KANG_1, T.REPTILE_1, T.SUB_ZERO_1]) {
+    const actions = moveList(type).map((m) => m.action);
+    assert.deepEqual(actions, [...new Set(actions)].sort((a, b) => a - b), `type ${type}`);
+  }
+  assert.equal(moveList(T.CYRAX_1).length, 2);
+});

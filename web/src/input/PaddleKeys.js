@@ -52,14 +52,19 @@ export function combosFor(type) {
   return COMBOS[base] || COMBOS[T.LIU_KANG_1];
 }
 
-// Human-readable move list for the help screen.
+// Human-readable move list for the help screen: one entry per special move,
+// in order (1, 2, 3). A move with more than one input lists them all.
 export function moveList(type) {
   const name = { P: 'Punch', K: 'Kick', BL: 'Block', F: '→', B: '←', U: '↑', D: '↓' };
-  return combosFor(type).map((c) => {
+  const byAction = new Map();
+  for (const c of combosFor(type)) {
     const keys = c.heldFor ? `hold ${name[c.key]} ${c.heldFor / 1000}s` :
       [...c.seq.map((k) => name[k]), (c.holding ? `${name[c.key]} (holding ${name[c.holding]})` : name[c.key])].join(' ');
-    return { keys, action: c.action };
-  });
+    byAction.set(c.action, [...(byAction.get(c.action) || []), keys]);
+  }
+  return [...byAction]
+    .sort(([a], [b]) => a - b)
+    .map(([action, keys]) => ({ action, keys: keys.join(' or ') }));
 }
 
 export class PaddleKeys {
