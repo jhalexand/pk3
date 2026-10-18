@@ -15,7 +15,8 @@ const MAX_OBJS = 100;
 
 export class GameEngine {
   // players: array indexed by player number of paddle type ids (or T.INVALID)
-  constructor({ players, emit = () => {}, clock }) {
+  // serve: put the ball in play right away (RoundEngine waits for "Fight!").
+  constructor({ players, emit = () => {}, clock, serve = true }) {
     this.emit = emit;
     this.now = clock;
     this.physics = new Physics(clock);
@@ -30,12 +31,16 @@ export class GameEngine {
     this.life = players.map((p) => (p === T.INVALID ? -1 : 100));
 
     this.addPlayers(players);
-    const ballPos = { x: Math.trunc(DIM.SCREEN_WIDTH / 3), y: (DIM.SCREEN_HEIGHT - DIM.WALL_TOP_Y) / 2 + DIM.WALL_TOP_Y };
-    this.addObject(new Ball(this, ballPos, { x: 1 * DIM.BALL_SPEED, y: 0.33 * DIM.BALL_SPEED }));
     this.addWall('top');
     this.addWall('right');
     this.addWall('bottom');
     this.addWall('left');
+    if (serve) this.serveBall();
+  }
+
+  serveBall() {
+    const ballPos = { x: Math.trunc(DIM.SCREEN_WIDTH / 3), y: (DIM.SCREEN_HEIGHT - DIM.WALL_TOP_Y) / 2 + DIM.WALL_TOP_Y };
+    this.addObject(new Ball(this, ballPos, { x: 1 * DIM.BALL_SPEED, y: 0.33 * DIM.BALL_SPEED }));
   }
 
   // One pass of PKGameEngine::mainloop. Returns the winning team (1 or 2), or 0.

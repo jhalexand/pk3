@@ -39,7 +39,7 @@ export class RoundEngine {
     this.engine?.destroy();
     // 'round' first: clients clear the field on it, before the new objects arrive.
     this.emit({ t: 'round', n: this.round, score: [...this.score] });
-    this.engine = new GameEngine({ players: this.players, emit: this.emit, clock: this.clock });
+    this.engine = new GameEngine({ players: this.players, emit: this.emit, clock: this.clock, serve: false });
     this.emit({ t: 'status', life: [...this.engine.life] });
     this.setPhase('intro');
     // "Round" ... "One" ... "Fight!" The original only played FIGHT.
@@ -50,6 +50,8 @@ export class RoundEngine {
       // Objects were created during the intro; don't let them jump forward.
       const now = this.clock();
       for (const o of this.engine.allObjects()) o.timestamp = now;
+      // The ball only appears now, so it doesn't fly around during the intro.
+      this.engine.serveBall();
       this.setPhase('play');
     });
   }
