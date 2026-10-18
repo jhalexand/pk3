@@ -26,7 +26,9 @@ const FILES = {
 };
 
 // Announcer clips that exist for some characters (from src/which.sounds).
-const NAMES = { 'Cyrax': 'cyrax', 'Kabal': 'kabal', 'Liu Kang': 'liukang', 'Sub Zero': 'subzero' };
+const NAMES = {
+  'Cyrax': 'cyrax', 'Jade': 'jade', 'Kabal': 'kabal', 'Liu Kang': 'liukang', 'Reptile': 'reptile', 'Sub Zero': 'subzero',
+};
 
 export class Audio {
   constructor(base = 'assets/sfx/') {
