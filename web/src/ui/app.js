@@ -13,7 +13,7 @@ import { CHARACTERS, A, SND } from '../engine/ids.js';
 const $ = (s) => document.querySelector(s);
 const audio = new Audio();
 const SCREENS = ['opening', 'konnect', 'gather', 'vs', 'game', 'gameover', 'credits'];
-const MUSIC = { opening: 'introMusic', konnect: 'introMusic', credits: 'introMusic', gather: 'selectmusic' };
+const MUSIC = { opening: 'introMusic', konnect: 'introMusic', gather: 'selectmusic' };
 const SPECIAL_NAMES = { [A.SPECIAL_1]: 'Special 1', [A.SPECIAL_2]: 'Special 2', [A.SPECIAL_3]: 'Special 3' };
 
 const state = {
