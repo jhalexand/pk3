@@ -353,6 +353,20 @@ function syncMute() {
 addEventListener('pointerdown', () => audio.unlock(), { capture: true });
 addEventListener('keydown', () => audio.unlock(), { capture: true });
 
+// Leaving the tab or the browser suspends the audio and pauses a game in
+// progress. Coming back resumes the audio; the game stays paused until a
+// player presses U.
+let away = false;
+function setAway(a) {
+  if (a === away) return;
+  away = a;
+  audio.setBackground(away);
+  if (away && state.view) send({ t: 'action', a: A.PAUSE });
+}
+document.addEventListener('visibilitychange', () => setAway(document.hidden || !document.hasFocus()));
+addEventListener('blur', () => setAway(true));
+addEventListener('focus', () => setAway(document.hidden));
+
 // --- boot ----------------------------------------------------------------
 (async () => {
   syncMute();

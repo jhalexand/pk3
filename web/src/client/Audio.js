@@ -38,6 +38,7 @@ export class Audio {
     this.music = null;
     this.musicName = null;
     this.muted = false;
+    this.background = false;
     try { this.muted = localStorage.getItem('pk3.muted') === '1'; } catch {}
   }
 
@@ -54,7 +55,7 @@ export class Audio {
       for (const n of names) this.fetch(n);
       if (this.musicName) this.playMusic(this.musicName);
     }
-    if (this.ctx.state === 'suspended') this.ctx.resume();
+    if (this.ctx.state === 'suspended' && !this.background) this.ctx.resume();
   }
 
   fetch(name) {
@@ -110,6 +111,15 @@ export class Audio {
     try { this.music?.stop(); } catch {}
     this.music = null;
     this.musicName = null;
+  }
+
+  // While the page is in the background, suspend all audio. Music picks up
+  // where it left off when the page comes back.
+  setBackground(bg) {
+    this.background = bg;
+    if (!this.ctx) return;
+    if (bg) this.ctx.suspend();
+    else this.ctx.resume();
   }
 
   setMuted(m) {
