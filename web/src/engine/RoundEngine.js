@@ -6,6 +6,7 @@
 // announce them:
 //   {t:'round', n, score}  {t:'roundEnd', winner, score}  {t:'matchEnd', winner, score}
 //   {t:'sync', objs:[[id,x,y,vx,vy]...]}
+//   {t:'pause', paused, quiet}  (quiet: freeze without showing the pause screen)
 
 import { GameEngine } from './GameEngine.js';
 import { SND } from './ids.js';
@@ -83,7 +84,7 @@ export class RoundEngine {
     this.score[winner - 1] += 1;
     this.winner = winner;
     this.setPhase('roundOver');
-    this.emit({ t: 'pause', paused: true }); // freeze clients' extrapolation
+    this.emit({ t: 'pause', paused: true, quiet: true }); // freeze clients' extrapolation
     const matchOver = this.score[0] === 2 || this.score[1] === 2;
     this.cue(1000, () => this.emit({ t: 'roundEnd', winner, score: [...this.score] }));
     this.cue(4000, () => {
