@@ -25,6 +25,7 @@ export class GameView {
     this.objects = new Map(); // id -> {type, x, y, vx, vy, anim, t, gfx}
     this.life = players.map((p) => (p < 0 ? -1 : 100));
     this.paused = false;
+    this.showPaused = false; // only a player's pause shows the pause screen
     this.banner = null; // {text, until}
     this.animAcc = 0;
     this.lastFrame = 0;
@@ -84,11 +85,13 @@ export class GameView {
       case 'status': this.life = m.life; break;
       case 'pause':
         this.paused = m.paused;
+        this.showPaused = m.paused && !m.quiet;
         for (const o of this.objects.values()) o.t = now;
         break;
       case 'round':
         this.objects.clear();
         this.paused = false;
+        this.showPaused = false;
         this.score = m.score;
         this.showBanner(`ROUND ${NUMBER_WORDS[Math.min(m.n, 3)]}`, 1500);
         setTimeout(() => this.showBanner('FIGHT', 900), 1500);
@@ -144,7 +147,7 @@ export class GameView {
     if (this.banner && now < this.banner.until) {
       this.font.printCentered(ctx, DIM.SCREEN_WIDTH / 2, 200, this.banner.text, 3);
     }
-    if (this.paused && !(this.banner && now < this.banner.until)) {
+    if (this.showPaused && !(this.banner && now < this.banner.until)) {
       this.font.printCentered(ctx, DIM.SCREEN_WIDTH / 2, 200, 'PAUSED', 3);
       this.font.printCentered(ctx, DIM.SCREEN_WIDTH / 2, 240, 'PRESS U', 2);
     }
