@@ -18,3 +18,9 @@ for s in $SOUNDS; do
   ffmpeg -hide_banner -loglevel error -y -f au -i "sounds/$s" -ac 1 -c:a libmp3lame -q:a 4 "$OUT/$s.mp3"
   echo "$OUT/$s.mp3"
 done
+
+# Character names recorded later as MP3 (src/which.sounds listed them as "need this").
+for s in jade reptile; do
+  cp "sounds/$s.mp3" "$OUT/$s.mp3"
+  echo "$OUT/$s.mp3"
+done
