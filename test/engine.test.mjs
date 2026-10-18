@@ -152,3 +152,16 @@ test('round engine plays a best-of-three match', () => {
   assert.deepEqual(end.score, [0, 2]);
   assert.equal(msgs.filter((m) => m.t === 'round').length, 2);
 });
+
+test('the ball is not served until "Fight!"', () => {
+  const clock = fakeClock();
+  const msgs = [];
+  const re = new RoundEngine({ players: [T.LIU_KANG_1, T.SUB_ZERO_2], emit: (m) => msgs.push(m), clock });
+  re.start();
+  const ballAdds = () => msgs.filter((m) => m.t === 'add' && m.type === T.BALL);
+  for (let t = 0; t < 1400; t += TICK_MS) { clock.advance(TICK_MS); re.tick(); }
+  assert.equal(ballAdds().length, 0);
+  for (let t = 0; t < 200; t += TICK_MS) { clock.advance(TICK_MS); re.tick(); }
+  assert.equal(ballAdds().length, 1);
+  assert.equal(re.phase, 'play');
+});
